@@ -3,4 +3,5 @@ layout: page
 title: "About Me"
 ---
 
-(bio)
+![]('/Users/antonellabasso/Desktop/Application Documents/grad1.jpg')
+
