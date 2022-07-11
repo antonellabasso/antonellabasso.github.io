@@ -3,8 +3,8 @@ layout: page
 title: "About Me"
 ---
 
-![](/IMAGES/grad1.jpg)
+<!-- ![](/IMAGES/grad1.jpg) -->
 
-<img src="/IMAGES/grad1.jpg" width="200"/>
+<img src="/IMAGES/grad1.jpg" width="400"/>
 
 
