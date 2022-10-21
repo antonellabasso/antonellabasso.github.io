@@ -3,7 +3,7 @@ layout: page
 title: "About Me"
 ---
 
-<!-- ![](/IMAGES/grad1.jpg) -->
+<!-- ![](/grad1.jpg) -->
 
 <img src="/IMAGES/grad1.jpg" align="left" width="280" style="float:left; padding-right:10px"/> <!-- use this (html) for resizing the image -->
 
