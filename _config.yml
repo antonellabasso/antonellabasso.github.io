@@ -16,12 +16,11 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  # - {file: "index.md"}
-  - {file: "https://antonellabasso.github.io/Basso.2023.CV.pdf", title:"CV"}
+  # - {file: "index.md"} (redundant)
+  # - {file: "https://antonellabasso.github.io/Basso.2023.CV.pdf", title:"CV"} (does not accept pdf files)
   - {file: "research.md", title:"Research"}
   - {file: "projects.md", title:"Projects"}
   # - {file: "README.md"} 
-  # can also add CV here
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:antonella_basso@brown.edu"}
