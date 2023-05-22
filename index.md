@@ -21,9 +21,10 @@ I am currently a second year Sc.M. student in Biostatistics at Brown University,
 
 Interests: biostatistics, data science, statistical & machine learning, predictive modeling, causal inference, algorithmic fairness, public health, social justice, R/Python
 
+My CV may be accessed [here](https://antonellabasso.github.io/Basso.2023.CV.pdf). 
+
 <br clear="left"/>
 
-My CV may be accessed [here](https://antonellabasso.github.io/Basso.2023.CV.pdf). 
 
 <!-- <embed src="https://antonellabasso.github.io/Basso.2023.CV.pdf" type="application/pdf" />  -->
 <!-- <embed src="http://antonellabasso.github.io/Basso.2023.CV.pdf" width="500" height="375" type="application/pdf">  -->
