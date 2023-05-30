@@ -23,17 +23,17 @@ I've recently graduated with a Sc.M. in Biostatistics from Brown University, whe
  
 <!-- As a nearly graduated master's student, I am now eager to put my skills to good use in a professional setting -->
 
-<span class="brmedium"></span>
+<span class="br"></span> 
 
 **Interests:** biostatistics, data science, statistical & machine learning, predictive modeling, causal inference, algorithmic fairness, public health, social justice, R/Python
 
 My CV can be accessed [here](https://antonellabasso.github.io/Basso.2023.CV.pdf). 
 
-<span class="brmedium"></span>
+<span class="br"></span> 
 
 **NOTE:** This site is currently under construction.
 
-<br clear="left"/>
+<span class="br"></span> 
 
 
 <!-- <embed src="https://antonellabasso.github.io/Basso.2023.CV.pdf" type="application/pdf" />  -->
