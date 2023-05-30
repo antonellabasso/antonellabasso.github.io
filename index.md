@@ -23,6 +23,9 @@ I am currently a second year Sc.M. student in Biostatistics at Brown University,
 
 My CV can be accessed [here](https://antonellabasso.github.io/Basso.2023.CV.pdf). 
 
+<br>
+
+**NOTE:** This site is currently under construction.
 <br clear="left"/>
 
 
