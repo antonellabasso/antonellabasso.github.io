@@ -11,7 +11,7 @@ title: "About Me"
 
 <!-- <br style="line-height: 0.5px"/> -->
 
-I've recently graduated with a Sc.M. in Biostatistics from Brown University, where I've gained ample experience in areas of data science, ML, and statistics with a focus on public health applications. With previous backgrounds in mathematics and philosophy, I am particularly drawn to causal inference and the intersection of fairness and automated decision making, which has been a driving force behind my master's thesis. Specifically, I’ve dedicated my research to developing a causally-motivated approach to fair predictive modeling, under the mentorship of [Dr. Alice Paul](https://vivo.brown.edu/display/apaul6), that appeals to path-specific effects and penalized maximum likelihood estimation within a counterfactual reasoning framework&mdash;the goal behind this work being to foster a more transparent and flexible decision making environment that allows users to guage the contextual trade-offs in accuracy and fairness to better establish more sound and explainable solutions. Having successfully completed my academic journey, I am now excited to embark on this new chapter in my career, where I can leverage my quantitative skills to make meaningful contributiions in industry as a dedicated professional.
+I've recently graduated with a Sc.M. in Biostatistics from Brown University, where I've gained ample experience in areas of data science, ML, and statistics with a focus on public health applications. With previous backgrounds in mathematics and philosophy, I am particularly drawn to causal inference and the intersection of fairness and automated decision making, which has been a driving force behind my master's thesis. Specifically, I’ve dedicated my research to developing a causally-motivated approach to fair predictive modeling, under the mentorship of [Dr. Alice Paul](https://vivo.brown.edu/display/apaul6), that appeals to path-specific effects and penalized maximum likelihood estimation within a counterfactual reasoning framework&mdash;the goal behind this work being to foster a more transparent and flexible decision making environment, allowing users to guage the contextual trade-offs in accuracy and fairness to establish more sound and explainable solutions. Having successfully completed my academic journey, I am now excited to embark on this new chapter in my career, where I can leverage my quantitative skills and unique perspectives to make meaningful contributiions in industry as a dedicated professional.
 
 <!-- Having successfully completed my academic journey, I am now excited to embark on a new chapter in my career, where I can leverage my quantitative skills to make a meaningful impact in the industry as a dedicated professional. Having reached the end of my academic journey, I am now eager to explore career opportunities in industry where I may apply my quantitative skills impactfully as a professional. -->
 
@@ -22,8 +22,6 @@ I've recently graduated with a Sc.M. in Biostatistics from Brown University, whe
 <!-- I am now eager explore career paths/opportunities that'll allow me to apply my quantitiative skills in positve/impactful ways as a professional. -->
  
 <!-- As a nearly graduated master's student, I am now eager to put my skills to good use in a professional setting -->
- 
-<br>
 
 **Interests:** biostatistics, data science, statistical & machine learning, predictive modeling, causal inference, algorithmic fairness, public health, social justice, R/Python
 
