@@ -1136,12 +1136,12 @@ institutions, it is vital to our collective functioning as free and
 equal citizens of a democratic society that we make the conscious effort
 to prevent the production and reproduction of (discriminatory) bias
 within our systems—especially those which serve as tools for
-consequential decision making. It is in this light that we decided to
+consequential decision making. It is in this light that we’ve decided to
 tackle the project of fair prediction from the angle of causality,
 proposing an intuitive method for optimally training predictive models
-that will satisfy the standards of accuracy and fairness assumed in
-given contexts. In particular, we followed the work of Nabi, Malinsky,
-and Shpitser (2022) to present a parallel approach that appeals to
+to satisfy the standards of accuracy and fairness assumed in given
+contexts. In particular, we followed the work of Nabi, Malinsky, and
+Shpitser (2022) to present a parallel approach that appeals to
 path-specific counterfactual fairness and simplifies the optimization
 problem by penalizing, rather than constraining, the unfair PSE. By
 proposing to modify the objective function directly to include an L1
@@ -1154,54 +1154,54 @@ still allowing for potential nonlinear forms of the PSE. Additionally,
 and perhaps more importantly, our approach offers a more flexible
 environment for decision making by encouraging users to define
 optimality contextually via empirical analysis of the trade-offs between
-accuracy and fairness, thereby also placing greater responsibility at
-the hands of decision makers and establishing a basis for more
-explainable outcomes by extension. This implicit requirement of
-increased human involvement in the decision making process is a key
-advantage to our approach. Precisely in that it challenges decision
-makers to interact with the model to make explainable choices that
-reflect not just their contextual aims, but the moral and legal
-requirements of fairness. Even when no optimal solution exists, our
-method tacitly holds users accountable for the outcomes of prediction,
-as they must be prepared to gauge the thresholds of accuracy and
-fairness to impose necessary judgement on potential parameters. As
-discussed in the previous section, while facilitating such an interface
-often comes with its own set of costs, we argue that the sociotechnical
-nature of algorithmic decision making and its life-altering downstream
-effects should provide sufficient reason to enforce this level of user
-interaction. Moreover, we maintain that in order to capture the dynamism
-of fairness in automation, we must have a way to encode our knowledge of
-the social, political, and historical processes that shape our daily
-lives, and a language to talk about “what might be or what might have
-been”—the more qualitative aspects of prediction that also force us to
-ask ourselves what actions and decisions mean for groups and individuals
-in the context of equity and social justice. While we acknowledge the
-unavoidable limitations of causal inference, we argue further that
-counterfactual reasoning is currently the best and perhaps the only way
-to bridge this theoretical gap. As we’ve pointed out throughout this
-work, path-specificity and mediation analysis specifically, provide a
-means for better understanding the complex processes that drive various
-forms of unfairness and the mathematics to target them explicitly.
-However, it bears repeating that counterfactual discrimination reasoning
-is not yet a complete work. In addition to the points already discussed,
-several objections[^5] to its sensitive attribute semantics and use as a
-formal framework for algorithmic fairness challenge its robustness and
-ability to capture and represent discrimination in a way that ensures
-desirable solutions. But, rather than discrediting its efficacy and
-potential, these critiques highlight important areas of improvement,
-providing valuable insight into where we ought to direct future
-research. In this regard, we encourage the engagement of both technical
-and philosophical work in this space, including the aforementioned
-extensions to our proposed methods, as well as the pursuit of novel
-approaches to fairness in automation. That is, bearing in mind that any
-formalized scheme, its underlying assumptions, and the language it
-provides us to discuss concepts like “fairness”, should always be
-approached with “a healthy level of skepticism”. Ultimately, we hope
-that this work will inspire future discussions on the matter and
-motivate similar research endeavors by demonstrating how causality, or
-counterfatuality, when carefully used as a basis for reasoning about
-fairness, offers a promising methodological framework for explicitizing
-and manifesting the true demands of justice.
+accuracy and fairness, thereby placing greater responsibility at the
+hands of decision makers and establishing a basis for more explainable
+outcomes by extension. This implicit requirement of increased human
+involvement in the decision making process is a key advantage to our
+approach. Precisely, it challenges decision makers to interact with the
+model to make explainable choices that reflect not only their contextual
+aims, but the moral and legal requirements of fairness. Even when no
+optimal solution exists, our method tacitly holds users accountable for
+the outcomes of prediction in that they must be prepared to gauge the
+thresholds of accuracy and fairness to impose necessary judgement on
+potential parameters. As discussed in the previous section, while
+facilitating such an interface often comes with its own set of costs, we
+argue that the sociotechnical nature of algorithmic decision making and
+its life-altering downstream effects should provide sufficient reason to
+enforce this level of user interaction. Moreover, we maintain that in
+order to capture the dynamism of fairness in automation, we must have a
+way to encode our knowledge of the social, political, and historical
+processes that shape our daily lives, and a language to talk about “what
+might be or what might have been”—the more qualitative aspects of
+prediction that force us to ask ourselves what actions and decisions
+mean for groups and individuals in the context of equity and social
+justice. While we acknowledge the unavoidable limitations of causal
+inference, we argue further that counterfactual reasoning is currently
+the best and perhaps the only way to bridge this theoretical gap. As
+we’ve pointed out throughout this work, path-specificity and mediation
+analysis specifically, provide a means for better understanding the
+complex processes that drive various forms of unfairness and the
+mathematics to target them explicitly. Nonetheless, it bears repeating
+that counterfactual discrimination reasoning is not yet a complete work.
+In addition to the points already discussed, several objections[^5] to
+its sensitive attribute semantics and use as a formal framework for
+algorithmic fairness challenge its robustness and ability to capture and
+represent discrimination in a way that ensures desirable solutions.
+Rather than discrediting its efficacy and potential however, these
+critiques highlight important areas of improvement, providing valuable
+insight into where we ought to direct future research. In this regard,
+we encourage the engagement of both technical and philosophical work in
+this space, including the aforementioned extensions to our proposed
+methods, as well as the pursuit of novel approaches to fairness in
+automation. That is, bearing in mind that any formalized scheme, its
+underlying assumptions, and the language it provides us to discuss
+concepts like *fairness*, should always be approached with “a healthy
+level of skepticism”. Ultimately, we hope that this work will inspire
+future discussions on the matter and motivate similar research endeavors
+in demonstrating how causality, or counterfatuality, when carefully used
+as a basis for reasoning about fairness, offers a promising
+methodological framework for explicitizing and manifesting the true
+demands of justice.
 
 > “Counterfactuals are the building blocks of moral behavior as well as
 > scientific thought. The ability to reflect on one’s past actions and
