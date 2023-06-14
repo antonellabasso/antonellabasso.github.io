@@ -1,10 +1,9 @@
 ---
-title: "Realizing Fairness in an Unfair World: A Causal Approach to Fair
-Predictive Modeling via Penalized Maximum Likelihood Estimation"
+title: "Realizing Fairness in an Unfair World: A Causal Approach to Fair Predictive Modeling via Penalized Maximum Likelihood Estimation"
 subtitle: "Biostatistics Master's Project"
 contributors: "Brown University School of Public Health, 2023"
 mathjax: true
-layout: default
+layout: post
 categories: media
 ---
 
@@ -32,6 +31,10 @@ categories: media
 > to formalize discrimination in a way that is most consistent with
 > rational thought, as well as the moral and legal principles of equity
 > and justice that govern society.
+
+
+![Fig. 1](https://antonellabasso.github.io/2023-05-01-basso-thesis_files/figure-gfm/4-1.png)
+
 
 ## I. Introduction
 
