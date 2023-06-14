@@ -33,7 +33,7 @@ categories: media
 > and justice that govern society.
 
 
-![Fig. 1](https://antonellabasso.github.io/2023-05-01-basso-thesis_files/figure-gfm/4-1.png)
+![Poster Presentation](https://antonellabasso.github.io/IMAGES/Basso_Poster.png)
 
 
 ## I. Introduction
