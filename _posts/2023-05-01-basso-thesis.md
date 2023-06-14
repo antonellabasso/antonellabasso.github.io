@@ -1,10 +1,10 @@
 ---
-title:  "Realizing Fairness in an Unfair World: A Causal Approach to Fair
+title: "Realizing Fairness in an Unfair World: A Causal Approach to Fair
 Predictive Modeling via Penalized Maximum Likelihood Estimation"
 subtitle: "Biostatistics Master's Project"
-author: "Brown University School of Public Health, 2023"
+contributors: "Brown University School of Public Health, 2023"
 mathjax: true
-layout: post
+layout: default
 categories: media
 ---
 
