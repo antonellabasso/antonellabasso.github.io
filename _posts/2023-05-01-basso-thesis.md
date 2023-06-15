@@ -8,7 +8,7 @@ categories: media
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script>
 
-#### Brown University School of Public Health, Biostatistics Master's Thesis
+#### [Brown University School of Public Health Biostatistics Master's Thesis](https://globalepidemics.org/brown-phrd-2023/)
 
 <center><b> Abstract </b></center>
 
