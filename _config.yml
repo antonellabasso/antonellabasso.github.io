@@ -34,3 +34,9 @@ comments:
 
 plugins:
  - jekyll-feed
+
+# Collections?
+
+collections:
+  staff_members:
+    output: true
