@@ -1,0 +1,12 @@
+<article>
+  <header><h1>{{ include.title | default: page.title }}</h1></header>
+  <ul class="collection">
+    {% for staff_member in site.staff_members %}
+     </h3>
+    	<a href="{{ staff_member.url }}">
+  {{ staff_member.name }} - {{ staff_member.position }} </a>
+     </h3>
+     <p>{{ staff_member.content | markdownify }}</p>
+   {% endfor %}
+  </ul>
+</article>
