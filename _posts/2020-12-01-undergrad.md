@@ -5,7 +5,7 @@ layout: post
 categories: media
 ---
 
-#### [Agnes Scott College Undergraduate Research in Philosophy](https://www.agnesscott.edu/academics/majors-minors/philosophy/index.html)
+#### [Agnes Scott College Undergraduate Philosophy Research](https://www.agnesscott.edu/academics/majors-minors/philosophy/index.html)
 
 <center><b> Abstract </b></center>
 
