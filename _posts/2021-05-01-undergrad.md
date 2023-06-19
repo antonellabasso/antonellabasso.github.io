@@ -1,5 +1,5 @@
 ---
-title:  "Advanced examples"
+title:  "What is the Point of Algorithmic Fairness?"
 mathjax: true
 layout: post
 categories: media
