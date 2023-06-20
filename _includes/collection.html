@@ -1,10 +1,10 @@
 <article>
   <header><h1>{{ include.title | default: page.title }}</h1></header>
   <ul class="collection">
-    {% for class in site.classes %}
+    {% for course in site.classes %}
       <li>
-        <h3> <a href="{{ class.url }}"> {{ class.code }} - {{ class.name }} </a> </h3>
-        <p> {{ class.content | markdownify }} </p>
+        <h3> <a href="{{ course.url }}"> {{ course.code }} - {{ course.name }} </a> </h3>
+        <p> {{ course.content | markdownify }} </p>
       </li>
     {% endfor %}
   </ul>
