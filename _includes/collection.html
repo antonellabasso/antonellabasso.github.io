@@ -4,8 +4,9 @@
     {% for course in site.courses %}
     <li>
       <h3> <a href="{{ course.url }}"> {{ course.code }} - {{ course.name }} </a> </h3>
-      <p> {{ course.content | markdownify }} </p>
     </li>
     {% endfor %}
   </ul>
 </article>
+
+<!-- <p> {{ course.content | markdownify }} </p> -->
