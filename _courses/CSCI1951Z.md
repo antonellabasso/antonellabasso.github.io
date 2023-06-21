@@ -10,7 +10,7 @@ permalink: /collections/:title
 
 > "We know we want to build more *equitable* technology, but how?"
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script> -->
 
 **Instructor:** [Suresh Venkatasubramanian](https://vivo.brown.edu/display/suresh) <br>
 **Textbook:** [Fairness and Machine Learning: Limitations and Opportunities](https://fairmlbook.org/) <br>
