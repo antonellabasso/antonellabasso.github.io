@@ -5,30 +5,31 @@ title: Fairness in Automated Decision Making
 mathjax: true
 layout: post
 categories: media
+permalink: /collections/:title
 ---
+
+> "We know we want to build more *equitable* technology, but how?"
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script>
 
 **Instructor:** [Suresh Venkatasubramanian](https://vivo.brown.edu/display/suresh)
 
-> "We know we want to build more *equitable* technology, but how?"
-
 **Description:** This course covered the latest developments in how to build more equitable algorithms, including definitions of (un)fairness, the challenges of **explaining** how ML works and making sure we can get **accountability**.
 
 **Textbook:** [Fairness and Machine Learning: Limitations and Opportunities](https://fairmlbook.org/)
 
-<h3> I. Testing Bias </h3>
+<h2> I. Testing Bias </h2>
 
-<h4> i. Analyzing a Real-World Scenario for Sources of Bias </h4>
+<h3> i. Analyzing a Real-World Scenario for Sources of Bias </h3>
 
 [*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) 
 ![Categories of AI Bias](https://antonellabasso.github.io/IMAGES/categories_AI_bias.png)
 
-<h5> Task: </h5> 
+<h3> Task: </h3> 
 
 Using the figure above, we identify potential sources of bias in the following example scenario and list them with justification, distinguishing whether these are likely to appear in the data collection/representation stage, the training/model building phase, or the inference/action stage of the data processing pipeline. 
 
-<h5> Scenario: </h5> 
+<h3> Scenario: </h3> 
 
 Health care systems use automated tools to determine whether a patient should be inducted into an intensive "care management system" to cure what ails them. The idea is to determine which patients can benefit the most from being admitted to the system because it is expensive, and not everyone can be enrolled. It is hard to know who will benefit the most, so the systems instead try to predict a proxy: who will incur the most health care costs. The idea is that if your health care costs are predicted to be large, you probably need intensive treatments to be cured, and so you're likely to benefit. The algorithm that makes this prediction uses the following training data set: input features for an individual are a list of insurance claim data from the previous year. Each such claim consists of
 
@@ -41,7 +42,7 @@ Health care systems use automated tools to determine whether a patient should be
 
 The goal is to predict the cost of care this year. Formally, this is a regression problem with a mix of numerical and categorical variables, and a numeric output. 
 
-<h5> Response: </h5>  
+<h3> Response: </h3>  
 
 This is my favorite example of racial discrimination in automated decision making. I commonly use it to explain (to others) how an algorithm may still favor a particular social group(s) in prediction, despite being "blind" to group membership in the data. Namely, this case exemplifies the ways in which *algorithmic neutrality* not only fails to prevent biased decisions, but leads individuals to believe that their outcomes are fair and accept injustice willingly. It’s no surprise, given our nation’s historical legacies of oppression and racism towards Black and Brown individuals, that communities of color continue to experience systemic injustices on disproportionate levels. Among these are both the degree and quality of healthcare provision, as reflected in insurance claims data, which proves that healthcare expenditures in the U.S. are disparately low for marginalized groups. Thus, any model that utilizes this data to predict future healthcare costs is bound to replicate the systemic biases embedded within it to generate an adverse *feedback loop* of discriminatory outcomes&mdash;that is, unless used in tandem with a processing strategy explicitly designed to remove them. In this way, healthcare expenditure becomes a *proxy* for race, making its use as a basis for allocating those in more urgent need of care an implicit method for discriminating against vulnerable populations and keeping marginalized individuals on the margins. 
 
