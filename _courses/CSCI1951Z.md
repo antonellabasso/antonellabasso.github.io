@@ -15,3 +15,5 @@ permalink: /collections/:title
 **Instructor:** [Suresh Venkatasubramanian](https://vivo.brown.edu/display/suresh) <br>
 **Textbook:** [Fairness and Machine Learning: Limitations and Opportunities](https://fairmlbook.org/) <br>
 **Description:** This course covered the latest developments in how to build more equitable algorithms, including definitions of (un)fairness, the challenges of **explaining** how ML works and making sure we can get **accountability**.
+
+Spring '23
