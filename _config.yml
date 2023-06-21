@@ -38,5 +38,5 @@ plugins:
 # Collections?
 
 collections:
-  staff_members:
+  courses:
     output: true
