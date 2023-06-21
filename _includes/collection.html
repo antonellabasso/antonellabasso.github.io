@@ -6,11 +6,11 @@
         {% if assignment.code == course.code  %}
     	    <li>
      	    <h3> <a href="{{ course.url }}"> {{ course.code }} - {{ course.name }} </a> </h3>
-            <ul>
+             <ul>
               <li> <h4> <a href="{{ assignment.url }}"> {{ assignment.title }} </a> </h4> </li>
-  	        </ul>
+  	     </ul>
     	   </li>
-	      {% endif %}
+	{% endif %}
       {% endfor %}
     {% endfor %}
   </ul>
