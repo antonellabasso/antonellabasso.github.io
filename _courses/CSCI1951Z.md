@@ -20,6 +20,6 @@ permalink: /collections/:title
 
 <h3>
   <li>
-    [Testing Bias](https://antonellabasso.github.io/testing_bias.md)
+    [Testing Bias](https://antonellabasso.github.io/blob/master/testing_bias.md)
   </li> 
 </h3>
