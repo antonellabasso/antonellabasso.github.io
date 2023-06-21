@@ -35,8 +35,12 @@ comments:
 plugins:
  - jekyll-feed
 
-# Collections?
+# Collections
 
 collections:
   courses:
     output: true
+    permalink: /courses/:title
+  assignments:
+    output: true
+    permalink: /assignments/:title
