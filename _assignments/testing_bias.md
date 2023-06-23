@@ -12,7 +12,7 @@ permalink: /collections/:title
 [*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) <br>
 ![Categories of AI Bias](https://antonellabasso.github.io/IMAGES/categories_AI_bias.png)
 
-<img src="IMAGES/categories_AI_bias.png" width="50%" alt="">
+<img src="https://antonellabasso.github.io/IMAGES/categories_AI_bias.png" width="50%" alt="">
 
 <h3> Task: </h3> 
 
