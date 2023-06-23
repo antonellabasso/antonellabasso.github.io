@@ -47,4 +47,5 @@ This is my favorite example of racial discrimination in automated decision makin
 
 
 <h1> II.  Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
-<h2> i. Data \& Preprocessing </h2> 
+  <h2> i. Data & Preprocessing </h2> 
+    <h3> Task </h3>
