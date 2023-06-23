@@ -48,4 +48,17 @@ This is my favorite example of racial discrimination in automated decision makin
 
 <h1> II.  Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
 <h2> i. Data & Preprocessing </h2> 
-&nbsp; <h3> Task </h3>
+<h3> Task: </h3>
+
+{% highlight c %}
+
+static void asyncEnabled(Dict* args, void* vAdmin, String* txid, struct Allocator* requestAlloc)
+{
+    struct Admin* admin = Identity_check((struct Admin*) vAdmin);
+    int64_t enabled = admin->asyncEnabled;
+    Dict d = Dict_CONST(String_CONST("asyncEnabled"), Int_OBJ(enabled), NULL);
+    Admin_sendMessage(&d, txid, admin);
+}
+
+{% endhighlight %}
+
