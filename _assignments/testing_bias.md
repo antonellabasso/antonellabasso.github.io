@@ -10,8 +10,6 @@ permalink: /collections/:title
 <h1> I. Analyzing a Real-World Scenario for Sources of Bias </h1>
 
 [*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) <br>
-![Categories of AI Bias](https://antonellabasso.github.io/IMAGES/categories_AI_bias.png)
-
 <img src="https://antonellabasso.github.io/IMAGES/categories_AI_bias.png" width="50%" alt="">
 
 <h3> Task: </h3> 
