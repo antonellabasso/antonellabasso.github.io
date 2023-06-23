@@ -9,7 +9,7 @@ permalink: /collections/:title
 
 <h1> I. Analyzing a Real-World Scenario for Sources of Bias </h1>
 
-[*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) 
+[*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) <br>
 ![Categories of AI Bias](https://antonellabasso.github.io/IMAGES/categories_AI_bias.png)
 
 <h3> Task: </h3> 
@@ -23,7 +23,7 @@ Health care systems use automated tools to determine whether a patient should be
 1. Demographic information (age, sex, but not race)
 2. Type of insurance (private, medicare, medicaid, hmo, etc.)
 3. Disease diagnosis (usually expressed in a standard code)
-4. Procedures performed (X-rays, MRIs, surgeries, etc., each expressed with a specific code)
+4. Procedures performed (X-rays, MRIs, surgeries, etc.&mdash;each expressed with a specific code)
 5. Medications
 6. Costs
 
@@ -47,4 +47,4 @@ This is my favorite example of racial discrimination in automated decision makin
 
 
 <h1> II.  Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
-<h2> i. Data \& Preprocessing </h2>
+<h2> i. Data \& Preprocessing </h2> 
