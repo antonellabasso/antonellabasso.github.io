@@ -3,9 +3,8 @@ code: CSCI1951Z
 name: Fairness in Automated Decision Making 
 title: Fairness in Automated Decision Making
 mathjax: true
-layout: post
+layout: page
 categories: media
-permalink: /:collection/:title
 ---
 
 > We know we want to build more *equitable* technology, but **how**?
