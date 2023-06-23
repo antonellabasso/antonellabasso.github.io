@@ -2,10 +2,11 @@
 code: CSCI1951Z
 title: Testing Bias
 mathjax: true
-layout: post
+layout: page
 categories: media
 permalink: /collections/:title
 ---
+<script src="https://gist.github.com/5555251.js?file=gist.md"></script>
 
 <h1> I. Analyzing a Real-World Scenario for Sources of Bias </h1>
 
