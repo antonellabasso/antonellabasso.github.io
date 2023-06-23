@@ -12,6 +12,8 @@ permalink: /collections/:title
 [*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) <br>
 ![Categories of AI Bias](https://antonellabasso.github.io/IMAGES/categories_AI_bias.png)
 
+<img src="IMAGES/categories_AI_bias.png" width="50%" alt="">
+
 <h3> Task: </h3> 
 
 Using the figure above, we identify potential sources of bias in the following example scenario and list them with justification, distinguishing whether these are likely to appear in the data collection/representation stage, the training/model building phase, or the inference/action stage of the data processing pipeline. 
