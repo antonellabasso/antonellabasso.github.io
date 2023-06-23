@@ -12,6 +12,8 @@ categories: media
 
 $$ We know we want to build more *equitable* technology, but **how**? $$ <br><br>
 
+$$ We know we want to build more equitable technology, but how? $$
+
 **Description:** This course covered the latest developments in how to build more *equitable* algorithms, including definitions of (un)fairness, the challenges of **explaining** how ML works and making sure we can get **accountability**.
 
 &nbsp;
