@@ -8,7 +8,7 @@ categories: media
 permalink: /collections/:title
 ---
 
-> We know we want to build more *equitable* technology, but how?
+> We know we want to build more *equitable* technology, but **how**?
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script> -->
 
