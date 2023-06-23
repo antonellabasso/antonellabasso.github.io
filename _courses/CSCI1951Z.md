@@ -12,7 +12,7 @@ categories: media
 
 &nbsp;
 
-> We know we want to build more *equitable* technology, but **how**?
+  > We know we want to build more *equitable* technology, but **how**?
 
 &nbsp;
 
