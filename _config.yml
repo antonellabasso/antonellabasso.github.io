@@ -40,7 +40,7 @@ plugins:
 collections:
   courses:
     output: true
-    permalink: /:courses/:title
+    permalink: /:_courses/:title
   assignments:
     output: true
-    permalink: /:assignments/:title
+    permalink: /:_assignments/:title
