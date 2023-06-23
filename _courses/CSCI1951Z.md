@@ -5,7 +5,7 @@ title: Fairness in Automated Decision Making
 mathjax: true
 layout: post
 categories: media
-permalink: /collections/:title
+permalink: /:collection/:title
 ---
 
 > We know we want to build more *equitable* technology, but **how**?
