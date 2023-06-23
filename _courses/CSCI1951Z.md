@@ -8,7 +8,7 @@ categories: media
 ---
 
 **Instructor:** [Suresh Venkatasubramanian](https://vivo.brown.edu/display/suresh) <br>
-**Textbook:** Barocas, S., Hardt, M. and Narayanan, A. (2023). [*Fairness and Machine Learning: Limitations and Opportunities*](https://fairmlbook.org/). The MIT Press. ISBN 978-0-262-04861-3. <br>
+**Textbook:** Barocas, S., Hardt, M. and Narayanan, A. (2023). [*Fairness and Machine Learning: Limitations and Opportunities*](https://fairmlbook.org/). The MIT Press. ISBN 978-0-262-04861-3. <br> <br>
 
 > We know we want to build more *equitable* technology, but **how**?
 
