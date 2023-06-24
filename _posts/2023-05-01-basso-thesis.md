@@ -7,7 +7,7 @@ categories: media
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script> -->
 
-### [Brown University School of Public Health Biostatistics Master's Thesis](https://globalepidemics.org/brown-phrd-2023/)
+#### [Brown University School of Public Health Biostatistics Master's Thesis](https://globalepidemics.org/brown-phrd-2023/)
 
 <center><b> Abstract </b></center> 
 
@@ -19,4 +19,4 @@ In light of the ongoing social injustices catalyzed and compounded by automated 
 
 ![Poster Presentation](https://antonellabasso.github.io/IMAGES/Basso_Poster.png) 
 
-[Full Paper](https://antonellabasso.github.io/Basso_Thesis.pdf)
+#### [Full Paper](https://antonellabasso.github.io/Basso_Thesis.pdf)
