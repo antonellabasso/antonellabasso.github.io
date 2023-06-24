@@ -17,6 +17,5 @@ In light of the ongoing social injustices catalyzed and compounded by automated 
 
 #### [Full Paper](https://antonellabasso.github.io/Basso_Thesis.pdf)
 
-[<center><b><i> Public Health Research Day </i></b></center>](https://globalepidemics.org/brown-phrd-2023/) 
-
 ![Poster Presentation](https://antonellabasso.github.io/IMAGES/Basso_Poster.png) 
+[<i> Public Health Research Day </i>](https://globalepidemics.org/brown-phrd-2023/) 
