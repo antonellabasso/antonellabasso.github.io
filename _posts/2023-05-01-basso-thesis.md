@@ -7,7 +7,7 @@ categories: media
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML.js"></script> -->
 
-#### [Brown University School of Public Health Biostatistics Master's Thesis](https://globalepidemics.org/brown-phrd-2023/)
+#### [Brown University School of Public Health Biostatistics Master's Thesis](https://www.brown.edu/academics/public-health/biostats/academics/masters-program/scm-degree)
 
 <center><b> Abstract </b></center> 
 
@@ -15,7 +15,7 @@ In light of the ongoing social injustices catalyzed and compounded by automated 
 
 > “Counterfactuals are the building blocks of moral behavior as well as scientific thought. The ability to reflect on one’s past actions and envision alternative scenarios is the basis of free will and social responsibility.” — *Judea Pearl, "The Book of Why"*
 
-<br>
+#### [Public Health Research Day](https://globalepidemics.org/brown-phrd-2023/)
 
 ![Poster Presentation](https://antonellabasso.github.io/IMAGES/Basso_Poster.png) 
 
