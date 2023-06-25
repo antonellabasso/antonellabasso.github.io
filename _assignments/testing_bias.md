@@ -6,7 +6,6 @@ layout: page
 categories: media
 permalink: /collections/:title
 ---
-<script src="https://gist.github.com/5555251.js?file=gist.md"></script>
 
 <h1> I. Analyzing a Real-World Scenario for Sources of Bias </h1>
 
@@ -59,6 +58,8 @@ Specifically, we focus the `ACSPublicCoverage` binary classification task, as de
 
 <!-- Let us begin by observing the dataset. You might find the [ACS PUMS documentation](https://www.census.gov/programs-surveys/acs/microdata/documentation.html) helpful when interpreting the feature codings. -->
 
+<h3> Solution: </h3>
+
 {% highlight python %}
 
 from folktables import ACSDataSource, ACSPublicCoverage
@@ -74,11 +75,32 @@ features, label, group = prediction_task.df_to_numpy(acs_data)
 # aggregate features and target variable into the same dataframe
 acs_public_coverage_data = acs_data[prediction_task.features + [prediction_task.target]]
 
-###### Data summary ######
+# data summary 
 print(acs_public_coverage_data.head())
 print("features used for predictions: "   + str(prediction_task.features))
 print("group membership variable: "       + str(prediction_task.group))
 print("the target variable of interest: " + str(prediction_task.target))
 
 {% endhighlight %}
+
+```
+    AGEP  SCHL  MAR  SEX  DIS  ESP  CIT  MIG  MIL  ANC  NATIVITY  DEAR  DEYE  \
+0    30  14.0    1    1    2  NaN    1  3.0  4.0    1         1     2     2   
+1    18  14.0    5    2    2  NaN    1  1.0  4.0    1         1     2     2   
+2    69  17.0    1    1    1  NaN    1  1.0  2.0    2         1     2     2   
+3    25   1.0    5    1    1  NaN    1  1.0  4.0    1         1     1     2   
+4    31  18.0    5    2    2  NaN    1  1.0  4.0    1         1     2     2   
+
+   DREM    PINCP  ESR  ST  FER  RAC1P  PUBCOV  
+0   2.0  48500.0  6.0   6  NaN      8       1  
+1   2.0      0.0  6.0   6  2.0      1       2  
+2   2.0  13100.0  6.0   6  NaN      9       1  
+3   1.0      0.0  6.0   6  NaN      1       1  
+4   2.0      0.0  6.0   6  2.0      1       1
+
+features used for predictions: ['AGEP', 'SCHL', 'MAR', 'SEX', 'DIS', 'ESP', 'CIT', 'MIG', 'MIL', 'ANC', 'NATIVITY', 'DEAR', 'DEYE', 'DREM', 'PINCP', 'ESR', 'ST', 'FER', 'RAC1P']
+group membership variable: RAC1P
+the target variable of interest: PUBCOV
+```
+
 
