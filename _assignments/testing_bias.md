@@ -51,15 +51,34 @@ This is my favorite example of racial discrimination in automated decision makin
 <h2> i. Data & Preprocessing </h2> 
 <h3> Task: </h3>
 
-{% highlight c %}
+We will be working with a dataset from [Folktables](https://github.com/zykls/folktables), a Python package that provides access to datasets derived from the US Census. The data provided by this library is sourced from the [American Community Survey](https://www.census.gov/programs-surveys/acs), a demographics survey program that gathers information about individuals' educational attainment, income, employment, demographic information, etc. First, we download and process a dataset from California 2018. 
 
-static void asyncEnabled(Dict* args, void* vAdmin, String* txid, struct Allocator* requestAlloc)
-{
-    struct Admin* admin = Identity_check((struct Admin*) vAdmin);
-    int64_t enabled = admin->asyncEnabled;
-    Dict d = Dict_CONST(String_CONST("asyncEnabled"), Int_OBJ(enabled), NULL);
-    Admin_sendMessage(&d, txid, admin);
-}
+<!-- This is particularly useful for measuring fairness in machine learning models as we will later show. -->
+
+Specifically, we focus the `ACSPublicCoverage` binary classification task, as defined by Folktables, which seeks to predict whether individuals have public coverage based on a given a set of features (i.e., age, sex, race, and a range of disabilities). Given that one of the features used in prediction is the __race__ *sensitive attribute*, which should have no correlation with the outcome, our goal is to utilize different techniques to make our model more fair in its prediction.
+
+<!-- Let us begin by observing the dataset. You might find the [ACS PUMS documentation](https://www.census.gov/programs-surveys/acs/microdata/documentation.html) helpful when interpreting the feature codings. -->
+
+{% highlight python %}
+
+from folktables import ACSDataSource, ACSPublicCoverage
+
+# import data source form ACS
+data_source = ACSDataSource(survey_year='2018', horizon='1-Year', survey='person')
+acs_data = data_source.get_data(states=["CA"], download=True)
+prediction_task = ACSPublicCoverage
+
+# gather columns defined in the ACSPublicCoverage prediction task
+features, label, group = prediction_task.df_to_numpy(acs_data)
+
+# aggregate features and target variable into the same dataframe
+acs_public_coverage_data = acs_data[prediction_task.features + [prediction_task.target]]
+
+###### Data summary ######
+print(acs_public_coverage_data.head())
+print("features used for predictions: "   + str(prediction_task.features))
+print("group membership variable: "       + str(prediction_task.group))
+print("the target variable of interest: " + str(prediction_task.target))
 
 {% endhighlight %}
 
