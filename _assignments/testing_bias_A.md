@@ -1,6 +1,6 @@
 ---
 code: CSCI1951Z
-title: Testing Bias - Analytical
+title: Testing Bias - Part A
 mathjax: true
 layout: page
 categories: media
