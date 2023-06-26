@@ -1,7 +1,7 @@
 <article>
   <header><h1>{{ include.title | default: page.title }}</h1></header>
   <ul class="collection">
-    {% for course in site.courses %}
+    {% for assignment in site.assignments %}
 	{% if assignment.code == course.code  %}
     	    <li>
      	    <h3> <a href="{{ course.url }}"> {{ course.code }} - {{ course.name }} </a> </h3>
