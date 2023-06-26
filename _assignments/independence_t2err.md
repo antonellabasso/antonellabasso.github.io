@@ -23,7 +23,7 @@ Consider the following data generation process for outcomes \\(y_i\\), for subje
 
 $$ y_1 \sim N\(0,1\), $$
 
-$$ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\) &&\text{for } i=2,...,n. $$ 
+$$ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\), i=2,...,n. $$ 
 
 As generated, each observation \\(y_i\\) and corresponding distribution depends on the former, \\(y_{i−1}\\) for \\(\rho \neq \\) 0, giving us dependent sample data. However, note that if \\(\rho = 0\\), then \\(y_1 \sim N\(0, 1\)\\), just as \\(y_i \mid y_{i−1} \sim N\(0, 1\)\\) for \\(i = 2, ..., n\\), which not only indicates that the data are independent, but also identically distributed. That is, each observation comes from the same distribution, and thus, has the same expectation, \\(\mu\\). If, on the other hand, \\(\rho\\), 0 and the data are dependent, these expectations are no longer constant, meaning that, almost surely, they are not identically distributed. Hence, violating yet another key assumption in hypothesis testing. Together, these assumptions of independence and identical distribution form what is known as *independent and identically distributed* (or “iid”), which, in practical terms, means that no two observations in any one data set are related and all are taken from the same probability distribution. Now, suppose we observe data \\(\\{ y_i \\}_{i=1:n}\\), generated with the DGP outlined above. Our goal is to test the null hypothesis that the mean is zero (\\(H_0 : \mu = 0\\)), against the alternative hypothesis that the mean is not zero \\((H_1 : \mu \neq 0)\\). Note that for this study, we hold that the null hypothesis is true.
 
