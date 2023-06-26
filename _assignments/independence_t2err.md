@@ -21,7 +21,7 @@ Scenarios such as this one are rather frequent in the real world and exceedingly
 
 Consider the following data generation process for outcomes \\(y_i\\), for subject \\(i = 1, 2, ..., n\\): 
 
-$$ y_1 \sim N\(0,1\), $$
+$$ y_1 \sim N\(0,1\), $$ <br>
 
 $$ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\), i=2,...,n. $$ 
 
