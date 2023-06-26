@@ -45,6 +45,7 @@ This is my favorite example of racial discrimination in automated decision makin
 **Use & Interpretation Bias:**
 - *feedback loop bias*: "Effects that may occur when an algorithm learns from user behavior and feeds that behavior back into the model." If the overall intent is to use this model to predict future healthcare care costs beyond the following year, feedback loop bias will be an inevitable consequence due to the perpetual use of biased data for prediction&mdash;in accordance with the renowned saying “bias in, bias out”.  
 
+<br> 
 
 <h1> 2.1. Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
 
@@ -119,7 +120,7 @@ race_coding = [
                                   # or american indian and alaska native not specified, and no other races
     'Asian alone',                # asian alone
     'Native Hawaiian',            # native hawaiian and other pacific islander alone
-    'Some Other Race alone',      # some Oother race alone
+    'Some Other Race alone',      # some other race alone
     'Two or More Races']          # two or more races
 
 # bar graph by group membership
@@ -180,22 +181,22 @@ def train(X_train, y_train):
 
 Implementing the three fairness measurements discussed in [*Fairness and Machine Learning: Limitations and Opportunities*](https://fairmlbook.org/) and defined below&mdash;*independence*, *separation* and *sufficiency*, we can evalute how fair our model is in predicting status of public health coverage.
 
-Let $Y$ be the binary target variable, $\hat{Y}$ be the model's predicted outcome and $A$ be some sensitive attiribute.
+Let \(Y\) be the binary target variable, \(\hat{Y}\) be the model's predicted outcome and \(A\) be some sensitive attiribute.
 
-- **Independence:** Random variables $(A, \hat{Y})$ satisty *independence*, i.e., $A \perp \hat{Y}$, if 
+- **Independence:** Random variables \((A, \hat{Y})\) satisty *independence*, i.e., \(A \perp \hat{Y}\), if 
 
 $$ \frac{P\{ \hat{Y} = 1\ | A = a\}}{P\{ \hat{Y} = 1\ | A = b\}} = 1. $$ 
 
-- **Separation:** Random variables $(A, Y, \hat{Y})$ satisty *separation*, i.e., $A \perp \hat{Y}|Y$, if for groups in $A$, say $a$ and $a'$, 
+- **Separation:** Random variables \((A, Y, \hat{Y})\) satisty *separation*, i.e., \(A \perp \hat{Y}|Y\), if for groups in \(A\), say \(a\) and \(a'\), 
   
-$$ \frac{P\{ \hat {Y} | Y = 1, A = a\}} {P \{\hat{Y} | Y = 1, A = a'\}} = 1; $$ 
+$$ \frac{P\{ \hat {Y} | Y = 1, A = a\}} {P \{\hat{Y} | Y = 1, A = a'\}} = 1; $$ <br>
 $$ \frac{P\{ \hat {Y} | Y = 0, A = a\}} {P \{\hat{Y} | Y = 0, A = a'\}} = 1. $$  
 
-- **Sufficiency:** Random variables $(A, Y, \hat{Y})$ satisty *sufficiency*, i.e., $A \perp Y | \hat{Y}$, iff for all values $\hat{y}$ of $\hat{Y}$ and groups in $A$, say $a$ and $a'$,
+- **Sufficiency:** Random variables \((A, Y, \hat{Y})\) satisty *sufficiency*, i.e., \(A \perp Y | \hat{Y}\), iff for all values \(\hat{y}\) of \(\hat{Y}\) and groups in \(A\), say \(a\) and \(a'\),
   
 $$ \frac{P\{Y = 1 | \hat{Y} = \hat{y}, A = a\}}{P\{Y = 1 | \hat{Y} = \hat{y}, A = a'\}} = 1. $$ 
 
-(NOTE: Separation is the same as equalizing true positive and false positive rates accross groups.)
+*(NOTE: Separation is the same as equalizing true positive and false positive rates accross groups.)*
 
 {% highlight python %}
 
