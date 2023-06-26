@@ -131,7 +131,7 @@ race_coding = [
 
 {% endhighlight %}
 
-<img src="https://antonellabasso.github.io/IMAGES/CSCI1951_HW1_img1.png" width="40%" alt="">
+<img src="https://antonellabasso.github.io/IMAGES/CSCI1951_HW1_img1.png" width="50%" alt="">
 
 {% highlight python %}
 
