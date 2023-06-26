@@ -45,8 +45,6 @@ This is my favorite example of racial discrimination in automated decision makin
 **Use & Interpretation Bias:**
 - *feedback loop bias*: "Effects that may occur when an algorithm learns from user behavior and feeds that behavior back into the model." If the overall intent is to use this model to predict future healthcare care costs beyond the following year, feedback loop bias will be an inevitable consequence due to the perpetual use of biased data for prediction&mdash;in accordance with the renowned saying “bias in, bias out”.  
 
-<br> 
-
 <h1> 2.1. Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
 
 <h3> Task: </h3>
