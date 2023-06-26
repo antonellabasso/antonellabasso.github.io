@@ -353,4 +353,4 @@ the sufficiency of the prediction and the group is 1.196133899104196
 
 <h1> 3. Analyzing a Particular (Mathematical) Notion of Fairness </h1>
 
-<h2> Task: </h3>
+<h3> Task: </h3>
