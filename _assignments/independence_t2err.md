@@ -35,5 +35,5 @@ We begin by simulating independent data in R via the DGP mentioned above, settin
 
 Seeing how independent data yields results that conform to the t-test assumptions, we now proceed by increasing the value of ρ to observe the influence of dependent data on \\(\hat{\alpha}\\). As before, we simulate 1,000 data sets with \\(n = 1,000\\), this time with \\(\rho \in \{0, 0.1, 0.2, ..., 0.9\}\\), resulting in a total of ten simulations, and hence, ten \\(\hat{\alpha}\\) values, one for each value of \\(\rho\\). The graph below illustrates the change in \\(\hat{\alpha}\\) for each incremental change in \\(\rho\\).
 
-<img src="https://antonellabasso.github.io/IMAGES/independence_t2err_img1.png" width="50%" alt="">
+<center><img src="https://antonellabasso.github.io/IMAGES/independence_t2err_img1.png" width="50%" alt=""></center>
 
