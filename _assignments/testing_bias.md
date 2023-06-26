@@ -187,13 +187,13 @@ Let \\(Y\\) be the binary target variable, \\(\hat{Y}\\) be the model's predicte
 
 $$ \frac{P\{ \hat{Y} = 1\ | A = a\}}{P\{ \hat{Y} = 1\ | A = b\}} = 1. $$ 
 
-- **Separation:** Random variables \\(\(A, Y, \hat{Y}\)\\) satisty *separation*, i.e., \\(A \perp \hat{Y}|Y\\), if for groups in \\(A\\), say \\(a\\) and \\(a'\\), 
+- **Separation:** Random variables \\(\(A, Y, \hat{Y}\)\\) satisty *separation*, i.e., \\(A \perp \hat{Y} \| Y\\), if for groups in \\(A\\), say \\(a\\) and \\(a'\\), 
   
 $$ \frac{P\{ \hat {Y} | Y = 1, A = a\}} {P \{\hat{Y} | Y = 1, A = a'\}} = 1; $$
 
 $$ \frac{P\{ \hat {Y} | Y = 0, A = a\}} {P \{\hat{Y} | Y = 0, A = a'\}} = 1. $$  
 
-- **Sufficiency:** Random variables \\(\(A, Y, \hat{Y}\)\\) satisty *sufficiency*, i.e., \\(A \perp Y | \hat{Y}\\), iff for all values \\(\hat{y}\\) of \\(\hat{Y}\\) and groups in \\(A\\), say \\(a\\) and \\(a'\\),
+- **Sufficiency:** Random variables \\(\(A, Y, \hat{Y}\)\\) satisty *sufficiency*, i.e., \\(A \perp Y \| \hat{Y}\\), iff for all values \\(\hat{y}\\) of \\(\hat{Y}\\) and groups in \\(A\\), say \\(a\\) and \\(a'\\),
   
 $$ \frac{P\{Y = 1 | \hat{Y} = \hat{y}, A = a\}}{P\{Y = 1 | \hat{Y} = \hat{y}, A = a'\}} = 1. $$ 
 
