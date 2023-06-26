@@ -48,7 +48,7 @@ This is my favorite example of racial discrimination in automated decision makin
 
 <h1> 2.1. Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
 
-<h2> Task: </h3>
+<h3> Task: </h3>
 
 We will be working with a dataset from [Folktables](https://github.com/zykls/folktables), a Python package that provides access to datasets derived from the US Census. The data provided by this library is sourced from the [American Community Survey](https://www.census.gov/programs-surveys/acs), a demographics survey program that gathers information about individuals' educational attainment, income, employment, demographic information, etc. First, we download and process a dataset from California 2018. 
 
@@ -58,7 +58,7 @@ Specifically, we focus the `ACSPublicCoverage` binary classification task, as de
 
 <!-- Let us begin by observing the dataset. You might find the [ACS PUMS documentation](https://www.census.gov/programs-surveys/acs/microdata/documentation.html) helpful when interpreting the feature codings. -->
 
-<h3> a. Data & Preprocessing </h3> 
+<h2> a. Data & Preprocessing </h2> 
 
 We first begin by observing the data.
 
@@ -146,11 +146,11 @@ health_coverage_coding = ['With public health coverage', 'Without public health 
 
 {% endhighlight %}
 
-<img src="https://antonellabasso.github.io/IMAGES/CSCI1951_HW1_img2.png" width="40%" alt="">
+<img src="https://antonellabasso.github.io/IMAGES/CSCI1951_HW1_img2.png" width="50%" alt=""> <br>
 
 Both bar graphs reflect that neither the race class nor the target label are balanced (i.e., evently distributed), displaying significant differences within them. 
 
-<h3> b. Training </h3> 
+<h2> b. Training </h2> 
 
 <!-- You might want to take a moment to think about how this imbalance in distribution might affect the model's performance and fairness. -->
 
@@ -176,7 +176,7 @@ def train(X_train, y_train):
 
 {% endhighlight %}
 
-<h3> c. Evaluation </h3> 
+<h2> c. Evaluation </h2> 
 
 Implementing the three fairness measurements discussed in [*Fairness and Machine Learning: Limitations and Opportunities*](https://fairmlbook.org/) and defined below&mdash;*independence*, *separation* and *sufficiency*, we can evalute how fair our model is in predicting status of public health coverage.
 
@@ -188,8 +188,7 @@ $$ \frac{P\{ \hat{Y} = 1\ | A = a\}}{P\{ \hat{Y} = 1\ | A = b\}} = 1. $$
 
 - **Separation:** Random variables $(A, Y, \hat{Y})$ satisty *separation*, i.e., $A \perp \hat{Y}|Y$, if for groups in $A$, say $a$ and $a'$, 
   
-$$ \frac{P\{ \hat {Y} | Y = 1, A = a\}} {P \{\hat{Y} | Y = 1, A = a'\}} = 1 $$ and 
-
+$$ \frac{P\{ \hat {Y} | Y = 1, A = a\}} {P \{\hat{Y} | Y = 1, A = a'\}} = 1; $$ 
 $$ \frac{P\{ \hat {Y} | Y = 0, A = a\}} {P \{\hat{Y} | Y = 0, A = a'\}} = 1. $$  
 
 - **Sufficiency:** Random variables $(A, Y, \hat{Y})$ satisty *sufficiency*, i.e., $A \perp Y | \hat{Y}$, iff for all values $\hat{y}$ of $\hat{Y}$ and groups in $A$, say $a$ and $a'$,
@@ -311,7 +310,7 @@ the false positive separation is  0.6666666666666666
 the sufficiency of the prediction and the group is 0.75
 ```
 
-<h3> d. The Full Workflow </h3> 
+<h2> d. The Full Workflow </h2> 
 
 Finally, we connect the whole pipeline with training and see how fair our model is. We will:
 
@@ -342,13 +341,13 @@ the sufficiency of the prediction and the group is 1.196133899104196
 
 <h1> 2.2. Resampling </h1>
 
-<h2> Task: </h3>
+<h3> Task: </h3>
 
 
 
 <h1> 2.3. Cost-Sensitive Learning </h1>
 
-<h2> Task: </h3>
+<h3> Task: </h3>
 
 
 
