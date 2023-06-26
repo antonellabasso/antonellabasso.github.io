@@ -21,9 +21,8 @@ Scenarios such as this one are rather frequent in the real world and exceedingly
 
 Consider the following data generation process for outcomes \\(y_i\\), for subject \\(i = 1, 2, ..., n\\): 
 
-\\[ y_1 \sim N\(0,1\), \\] <br>
-
-\\[ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\), i=2,...,n. \\] 
+\\[ y_1 \sim N\(0,1\), \\] 
+\\[ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\), \text{for } i=2,...,n. \\] 
 
 As generated, each observation \\(y_i\\) and corresponding distribution depends on the former, \\(y_{i−1}\\) for \\(\rho \neq \\) 0, giving us dependent sample data. However, note that if \\(\rho = 0\\), then \\(y_1 \sim N\(0, 1\)\\), just as \\(y_i \mid y_{i−1} \sim N\(0, 1\)\\) for \\(i = 2, ..., n\\), which not only indicates that the data are independent, but also identically distributed. That is, each observation comes from the same distribution, and thus, has the same expectation, \\(\mu\\). If, on the other hand, \\(\rho\\), 0 and the data are dependent, these expectations are no longer constant, meaning that, almost surely, they are not identically distributed. Hence, violating yet another key assumption in hypothesis testing. Together, these assumptions of independence and identical distribution form what is known as *independent and identically distributed* (or “iid”), which, in practical terms, means that no two observations in any one data set are related and all are taken from the same probability distribution. Now, suppose we observe data \\(\\{ y_i \\}_{i=1:n}\\), generated with the DGP outlined above. Our goal is to test the null hypothesis that the mean is zero (\\(H_0 : \mu = 0\\)), against the alternative hypothesis that the mean is not zero \\((H_1 : \mu \neq 0)\\). Note that for this study, we hold that the null hypothesis is true.
 
@@ -61,4 +60,142 @@ T-tests are among the many statistical tests that rely on the assumption of iid 
 
 <h1> Code Appendix </h1>
 
+{% highlight R %}
 
+## Libraries
+library(ggplot2)
+library(latex2exp)
+
+{% endhighlight %}
+
+{% highlight R %}
+
+## II.a Independent Data
+
+set.seed(1)
+
+## Data Generating Process 
+
+dgp <- function(rho){
+#' data gen. process (dgp) function generates a dataset of size 1,000 for given rho
+#'@param rho sets value of rho
+#'@return test TRUE/FALSE indicating when a rejection of the null is made
+
+  # pull y_1 from N(0,1)
+  y <- c(rnorm(1, 0, 1)) 
+
+  # pull y_i from N(rho*y_{i-1}, 1) for i > 2
+  for (i in 2:1000){
+    y[i] <- rnorm(1, rho*y[i-1], 1) 
+    }
+  
+  # run t-test and return TRUE if p-value <= 0.05
+  test <- ifelse(t.test(y)$p.value <= 0.05, TRUE, FALSE) 
+  return(test)
+}
+
+# find proportion of times we reject the null hypothesis (alpha hat)
+alpha_hat <- sum(replicate(1000, dgp(0), simplify=T))/1000 
+
+{% endhighlight %}
+
+{% highlight R %}
+
+## II.b Dependent Data
+
+set.seed(1)
+
+# test rho values from 0 to 0.9 in increments of 0.1
+rho_seq <- seq(0, 0.9, 0.1) 
+
+# find proportion of null rejections for each rho in rho_seq (alpha hats)
+alpha_hats <- c()
+for (i in 1:length(rho_seq)){
+  alpha_hats[i] <- sum(replicate(1000, 
+                                 dgp(rho_seq[i]), 
+                                 simplify=T))/1000
+ }
+
+{% endhighlight %}
+
+{% highlight R %}
+
+## Plot 1
+
+# save data frame of rho's vs. alpha hats 
+plot_b <- as.data.frame(cbind(rho_seq, alpha_hats)) 
+
+# plot rho's vs. alpha hats
+ggplot(plot_b, aes(x=rho_seq, y=alpha_hats)) + 
+  geom_point() + geom_line() + 
+  geom_hline(yintercept=0.05, linetype="dashed", 
+             color="red", size=0.5) +
+  labs(title=TeX('$\\rho$ vs. $\\hat{\\alpha}\'$s'),
+       x=TeX('$\\rho$'),
+       y=TeX('$\\hat{\\alpha}\'$s')) + theme_bw()
+
+{% endhighlight %}
+
+{% highlight R %}
+
+## II.c Comparing Distributions
+
+set.seed(1)
+
+## Data Generating Process 2
+
+dgp_t <- function(rho) {
+#' dgp_t function generates dataset of size 1,000 for a given rho and 
+#' returns t-statistic from two-sided t-test
+#'@param rho sets value of rho
+#'@return t-statistic value
+
+  # pull y_1 from N(0,1)
+  y <- c(rnorm(1, 0, 1)) 
+  
+  # pull y_i from N(rho*y_{i-1}, 1) for i > 2
+  for (i in 2:1000){
+    y[i] <- rnorm(1, rho*y[i-1], 1)  
+    }
+  
+  test <- t.test(y)$statistic  
+  return(test)
+}
+
+# rho values to collect t-statistics for
+rho_seq2 <- c(0, 0.5, 0.9) 
+
+# collect 1,000 t-statistics for each rho in rho_seq2
+t_stats <- replicate(1000, sapply(rho_seq2, dgp_t), simplify=F) 
+
+# arrange t-statistics into a matrix
+t_stats <- matrix(unlist(t_stats), ncol=3, nrow=1000, byrow=T)
+
+{% endhighlight %}
+
+{% highlight R %}
+
+## Plot 2
+
+# plot side-by-side histograms of t-statistics for rho={0, 0.5, 0.9} and overlay t-distribution with 999 degrees of freedom
+par(mfrow=c(1,3))
+
+# rho=0
+hist(unlist(t_stats[,1]), 
+     freq=FALSE, breaks=50, 
+     xlab="t", main=TeX('$\\rho = 0$'))
+curve(dt(x, df=999), add=TRUE, col="red")
+
+# rho=0.5
+hist(unlist(t_stats[,2]), 
+     freq=FALSE, breaks=50, 
+     xlab="t", main=TeX('$\\rho = 0.5$'))
+curve(dt(x, df=999), add=TRUE, col="red")
+
+# rho=0.9
+hist(unlist(t_stats[,3]), 
+     freq=FALSE, breaks=50, 
+     xlab="t", main=TeX('$\\rho = 0.9$'))
+curve(dt(x, df=999), add=TRUE, col="red")
+
+{% endhighlight %}
