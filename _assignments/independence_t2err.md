@@ -23,7 +23,7 @@ Consider the following data generation process for outcomes \\(y_i\\), for subje
 
 $$ y_1 \sim N\(0,1\), $$
 
-$$ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\) \textrm{for } i=2,...,n. $$ 
+$$ y_i \mid y_{i−1} \sim N\(\rho \cdot y_{i−1}, 1\) \\textrm{for } i=2,...,n. $$ 
 
 As generated, each observation \\(y_i\\) and corresponding distribution depends on the former, \\(y_{i−1}\\) for \\(\rho \neq \\) 0, giving us dependent sample data. However, note that if \\(\rho = 0\\), then \\(y_1 \sim N\(0, 1\)\\), just as \\(y_i \mid y_{i−1} \sim N\(0, 1\)\\) for \\(i = 2, ..., n\\), which not only indicates that the data are independent, but also identically distributed. That is, each observation comes from the same distribution, and thus, has the same expectation, \\(\mu\\). If, on the other hand, \\(\rho\\), 0 and the data are dependent, these expectations are no longer constant, meaning that, almost surely, they are not identically distributed. Hence, violating yet another key assumption in hypothesis testing. Together, these assumptions of independence and identical distribution form what is known as *independent and identically distributed* (or “iid”), which, in practical terms, means that no two observations in any one data set are related and all are taken from the same probability distribution. Now, suppose we observe data \\(\\{ y_i \\}_{i=1:n}\\), generated with the DGP outlined above. Our goal is to test the null hypothesis that the mean is zero (\\(H_0 : \mu = 0\\)), against the alternative hypothesis that the mean is not zero \\((H_1 : \mu \neq 0)\\). Note that for this study, we hold that the null hypothesis is true.
 
@@ -31,9 +31,7 @@ As generated, each observation \\(y_i\\) and corresponding distribution depends 
 
 We begin by simulating independent data in R via the DGP mentioned above, setting \\(\rho = 0\\). Keep in mind that, as mentioned, this means that our data is (\\(y_i \sim N\(0, 1\)\\), for \\(i = 1, ..., n\\)) and hence, the expected value of \\(y\\) remains zero, namely \\(E[Y] = \mu = 0\\). Specifically, we generate 1,000 data sets of sample size \\(n = 1,000\\), and for each, we run a t-test with unknown variance, recording the decision to accept or reject the null hypothesis based on a type I error rate of \\(\alpha = 0.05\\). That is, for each data set, we generate a corresponding p-value and compute the proportion, which we denote \\(\hat{\alpha}\\)), of those which exceed our significance level of 0.05 out of the total 1,000 decisions made. As expected, doing so yielded \\(\hat{\alpha} = 0.048 ≈ 0.05\\), indicating that nearly 5% of the 1,000 t-tests conducted incorrectly rejected the null hypothesis, assumming that \\(H_0\\) is true. And, given that our data are iid, obtaining a type I error rate close to 0.05 demonstrates that the t-test assumptions are met, thus producing t-statistics that follow a t-distribution (more on this later).
 
-<h2> 2.b. Dependent Data </h2>
-
-$$ \rho \in \\{ 0, 0.1, 0.2, ..., 0.9 \\} $$
+<h2> 2.b. Dependent Data </h2> <!-- $$ \rho \in \\{ 0, 0.1, 0.2, ..., 0.9 \\} $$ -->
 
 Seeing how independent data yields results that conform to the t-test assumptions, we now proceed by increasing the value of \\(\rho\\) to observe the influence of dependent data on \\(\hat{\alpha}\\). As before, we simulate 1,000 data sets with \\(n = 1,000\\), this time with \\(\rho \in \\{0, 0.1, 0.2, ..., 0.9\\}\\), resulting in a total of ten simulations, and hence, ten \\(\hat{\alpha}\\) values, one for each value of \\(\rho\\). The graph below illustrates the change in \\(\hat{\alpha}\\) for each incremental change in \\(\rho\\).
 
