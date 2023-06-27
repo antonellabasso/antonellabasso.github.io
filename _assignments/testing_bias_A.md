@@ -52,3 +52,25 @@ This is my favorite example of racial discrimination in automated decision makin
 <h1> II. Analyzing a Particular (Mathematical) Notion of Fairness </h1>
 
 <h3> Task: </h3>
+
+In our exploration of fairness measures we've been considering how to evaluate the fairness of a binary classifier that produces a 0-1 output. In various exploratory data mining tasks the goal is to *cluster* a collection of objects into groups and determine whether the groups have some meaningful structure. Formally, we are given a set of $n$ points, where each point is represented by a $d$-dimensional feature vector $x \in R^d$. We define the *distance* between two points as the Euclidean distance between them: 
+
+\\[ d(x,y) = \sqrt{\sum_{i=1}^d (x_i - y_i)^2} \\]
+
+And then we define the \\(k\\)-means problem as: 
+
+Partition the points into $k$ clusters \\(C_1, \dots, C_k\\) such that the sum of squared distance from each point to its cluster center is minimized, where the center of a cluster is defined as the centroid of the cluster:  
+
+\\[\mu(C) = \sum_{x \in C} x/\mid C \mid\\]
+
+where \\(\mid C \mid\\) is the number of points in the cluster. More precisely, the goal is to find \\(C_1, \dots, C_k\\) such that \\(\sum_{j=1}^k \sum_{x \in C_j} d^2(x, \mu(C_j))\\) is minimized. Now consider a "fair" equivalent of this problem. Now each point $x$ also has a color \\(g(x)\\). For any clustering we can write down the fraction of points within a cluster having a particular color. 
+
+Then the goal is to make sure these fractional values for each cluster match the overall proportions of colors. For example, if we have 15 points of which 5 are red and 10 are blue, and we want to cluster them into 5 clusters, then in each cluster there should be 1 red and 2 blue points. 
+
+Consider two scenarios in which one might wish to cluster points. 
+
+1. Each point encodes different kinds of qualifications. The clusters represent people with similar qualifications. The "color" of a point is a gender encoding. The goal of the clustering is to group people into categories to target them with different kinds of job ads. 
+
+2. Each point represents the location of a voter in a state. The clusters represent voting districts for a state assembly. The "color" of a point is the person's registered political affiliation (assume that there are two parties). 
+
+Assess the degree to which the fairness measure eliminates any form of bias that one might be concerned with in the scenarios described. 
