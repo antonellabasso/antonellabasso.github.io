@@ -53,24 +53,56 @@ This is my favorite example of racial discrimination in automated decision makin
 
 <h3> Task: </h3>
 
-In our exploration of fairness measures we've been considering how to evaluate the fairness of a binary classifier that produces a 0-1 output. In various exploratory data mining tasks the goal is to *cluster* a collection of objects into groups and determine whether the groups have some meaningful structure. Formally, we are given a set of $n$ points, where each point is represented by a $d$-dimensional feature vector $x \in R^d$. We define the *distance* between two points as the Euclidean distance between them: 
+Against the backdrop of fair clustering, we assess the degree to which the fairness measure described below eliminates any form of bias that one might be concerned with in the subsequent scenarios provided. 
 
-\\[ d(x,y) = \sqrt{\sum_{i=1}^d (x_i - y_i)^2} \\]
+In various exploratory data mining tasks the goal is to *cluster* a collection of objects into groups and determine whether the groups have some meaningful structure. Formally, we are given a set of \\(n\\) points, where each point is represented by a \\(d\\)-dimensional feature vector \\(x \in \mathcal{R}^d\\). Defining the *distance* between two points as the Euclidean distance: 
 
-And then we define the \\(k\\)-means problem as: 
+\\[ d(x,y) = \sqrt{\sum_{i=1}^d (x_i - y_i)^2}, \\]
 
-Partition the points into $k$ clusters \\(C_1, \dots, C_k\\) such that the sum of squared distance from each point to its cluster center is minimized, where the center of a cluster is defined as the centroid of the cluster:  
+we can then outline the \\(k\\)-means problem as follows. Partition the points into \\(k\\) clusters \\(C_1, \dots, C_k\\) such that the sum of squared distance from each point to its cluster center is minimized, where the center of a cluster is defined as the *centroid* of the cluster:  
 
-\\[\mu(C) = \sum_{x \in C} x/\mid C \mid\\]
+\\[ \mu\(C\) = \sum_{x \in C} \frac{x}{\mid C \mid}, \]
 
-where \\(\mid C \mid\\) is the number of points in the cluster. More precisely, the goal is to find \\(C_1, \dots, C_k\\) such that \\(\sum_{j=1}^k \sum_{x \in C_j} d^2(x, \mu(C_j))\\) is minimized. Now consider a "fair" equivalent of this problem. Now each point $x$ also has a color \\(g(x)\\). For any clustering we can write down the fraction of points within a cluster having a particular color. 
+where \\(\mid C \mid\\) is the total number of points in the cluster. More precisely, the goal is to find \\(C_1, \dots, C_k\\) such that the following expression is minimized.
 
-Then the goal is to make sure these fractional values for each cluster match the overall proportions of colors. For example, if we have 15 points of which 5 are red and 10 are blue, and we want to cluster them into 5 clusters, then in each cluster there should be 1 red and 2 blue points. 
+\\[ \sum_{j=1}^k \sum_{x \in C_j} d^2 \(x, \mu\(C_j)\)\) \\] 
+ 
+In the exploration of fairness measures (*Testing Bias - Part B*) we've considered how to evaluate the fairness of a binary classifier that produces a 0-1 output. However, we now consider a "fair" equivalent of the \\(k\\)-means problem. 
 
-Consider two scenarios in which one might wish to cluster points. 
+> Suppose each point \\(x\\) also has a color feature \\(g(x)\\), such that we can determine the fraction of points with a particular color within each cluster. Then the goal then becomes to make sure these cluster-specific or "local" fractional values match the overall "global" proportions of colors reflected in the data. For example, if we have 15 points of which 5 are red and 10 are blue, and we want to cluster them into 5 clusters, then each cluster should contain 1 red and 2 blue points. 
 
-1. Each point encodes different kinds of qualifications. The clusters represent people with similar qualifications. The "color" of a point is a gender encoding. The goal of the clustering is to group people into categories to target them with different kinds of job ads. 
+Let us consider two scenarios in which one might wish to cluster points. 
 
-2. Each point represents the location of a voter in a state. The clusters represent voting districts for a state assembly. The "color" of a point is the person's registered political affiliation (assume that there are two parties). 
+<h3> Scenarios: </h3> 
 
-Assess the degree to which the fairness measure eliminates any form of bias that one might be concerned with in the scenarios described. 
+1. Each point encodes different kinds of qualifications. The clusters represent people with similar qualifications. The "color" of a point is a binary gender encoding. The goal of the clustering is to group people into categories to target them with different kinds of job ads. 
+
+2. Each point represents the location of a voter in a state. The clusters represent voting districts for a state assembly. The "color" of a point is the person's registered political affiliation, assumming that there are only two parties. 
+
+<h3> Response: </h3> 
+
+**Scenario 1:**
+
+- Individuals are clustered based on qualification features for the purpose of targeting them with corresponding job ads.
+
+- <u>Fairness Measure</u>: Clusters maintain the same gender proportions as the data.
+
+**Metric Evaluation:**
+
+- If we have balanced data, this clustering scheme would ensure that outcomes are relatively evenly distributed between “color” groups for similar qualifications.
+
+- If we have imbalanced data, then:
+
+  - It’s possible for clusters to maintain any systemic bias that may be present in the data. For example, if there are considerable quality and pay differences between jobs being advertised, then the majority group will inevitably receive more ads for better paying jobs. However, the fact that the inverse would also hold true (i.e., the majority group would also receive more ads for jobs with inferior benefits) could be seen as a way of "evening out" this unfairness given that the degree to which each group benefits or is harmed by the algorithm would be relative to its size. That is, unless a “benefit” holds more weight than a “harm”, say.
+
+  - It could be the case that correlation between clustering features and "color" attribute sees naturally occurring (qualification-based) clusters for which gender proportions vastly differ from that of the whole data. When this holds, the proposed fairness metric would yield sub-optimal clusters and prompt the algorithm to give inaccurate job ads. This is particularly concerning for imbalanced data since the clustering cost would not be evenly distributed among groups, which in this context, means the minority class receives disproportionately more inaccurate or irrelevant job ads.
+
+**Scenario 2:**
+
+- Voters' locations are clustered into voting districts for a given state.
+
+- <u>Fairness Measure</u>: Clusters maintain the same political affiliation proportions as the data.
+
+**Metric Evaluation:**
+
+- The proposed clustering scheme in this scenario would not only be ineffective in the face of balanced data, but is considered to be a specific form of *gerrymandering* that would otherwise result in an unfair political election. Although clustering in this way ensures that the distribution of political parties for a given district is consistent with that of the whole state, it does not ultimately yield a fair partitioning of districts that themselves reflect this desired distribution. That is, since every district would be won over by the majority class, the minority class would remain completely unrepresented at the state level and suffer from a compromised chance of winning the election. 
