@@ -9,12 +9,14 @@ permalink: /collections/:title
 
 <h1> I. Analyzing a Real-World Scenario for Sources of Bias </h1>
 
-[*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) <br>
-<img src="https://antonellabasso.github.io/IMAGES/categories_AI_bias.png" width="50%" alt="">
-
 <h3> Task: </h3> 
 
-Using the figure above, we identify potential sources of bias in the following example scenario and list them with justification, distinguishing whether these are likely to appear in the data collection/representation stage, the training/model building phase, or the inference/action stage of the data processing pipeline. 
+Using the figure below, we identify potential sources of bias in the following scenario and list them with justification, distinguishing whether these are likely to appear in the data collection/representation stage, the training/model building phase, or in the inference/action phase of the data processing pipeline. 
+
+<center>
+  [*Categories of AI Bias*](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.1270.pdf) <br>
+  <img src="https://antonellabasso.github.io/IMAGES/categories_AI_bias.png" width="45%" alt="">
+</center>
 
 <h3> Scenario: </h3> 
 
@@ -31,7 +33,7 @@ The goal is to predict the cost of care this year. Formally, this is a regressio
 
 <h3> Response: </h3>  
 
-This is my favorite example of racial discrimination in automated decision making. I commonly use it to explain (to others) how an algorithm may still favor a particular social group(s) in prediction, despite being "blind" to group membership in the data. Namely, this case exemplifies the ways in which *algorithmic neutrality* not only fails to prevent biased decisions, but leads individuals to believe that their outcomes are fair and accept injustice willingly. It’s no surprise, given our nation’s historical legacies of oppression and racism towards Black and Brown individuals, that communities of color continue to experience systemic injustices on disproportionate levels. Among these are both the degree and quality of healthcare provision, as reflected in insurance claims data, which proves that healthcare expenditures in the U.S. are disparately low for marginalized groups. Thus, any model that utilizes this data to predict future healthcare costs is bound to replicate the systemic biases embedded within it to generate an adverse *feedback loop* of discriminatory outcomes&mdash;that is, unless used in tandem with a processing strategy explicitly designed to remove them. In this way, healthcare expenditure becomes a *proxy* for race, making its use as a basis for allocating those in more urgent need of care an implicit method for discriminating against vulnerable populations and keeping marginalized individuals on the margins. 
+This is my favorite example of racial discrimination in automated decision making. I often use it to explain (to others) how an algorithm may still favor a particular social group(s) in prediction, despite being "blind" to group membership in the data. Namely, this case exemplifies the ways in which *algorithmic neutrality* not only fails to prevent biased decisions, but leads individuals to believe that their outcomes are fair and accept injustice willingly. It’s no surprise, given our nation’s historical legacies of oppression and racism towards Black and Brown individuals, that communities of color continue to experience systemic injustices on disproportionate levels. Among these are both the degree and quality of healthcare provision, as reflected in insurance claims data, which proves that healthcare expenditures in the U.S. are disparately low for marginalized groups. Thus, any model that utilizes this data to predict future healthcare costs is bound to replicate the systemic biases embedded within it to generate an adverse *feedback loop* of discriminatory outcomes&mdash;that is, unless used in tandem with a processing strategy explicitly designed to remove them. In this way, healthcare expenditure becomes a *proxy* for race, making its use as a basis for allocating those in more urgent need of care an implicit method for discriminating against vulnerable populations and keeping marginalized individuals on the margins. 
 
 **Selection/Sampling Bias:**
 - *ecological fallacy*: "Occurs when an inference is made about an individual based on their membership within a group." The implicit assumption that disadvantaged racial groups receive the same form of care or benefits than their privileged counterparts could be interpreted as an ecological fallacy. 
