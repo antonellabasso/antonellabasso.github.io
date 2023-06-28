@@ -67,7 +67,7 @@ where \\(\mid C \mid\\) is the total number of points in the cluster. More preci
 
 \\[ \sum_{j=1}^k \sum_{x \in C_j} d^2 \(x, \mu\(C_j)\)\) \\] 
  
-In the exploration of fairness measures (*Testing Bias - Part B*) we've considered how to evaluate the fairness of a binary classifier that produces a 0-1 output. However, we now consider a "fair" equivalent of the \\(k\\)-means problem. 
+In the exploration of fairness measures (*How Do Design Choices Affect Fairness?*) we've considered how to evaluate the fairness of a binary classifier that produces a 0-1 output. However, we now consider a "fair" equivalent of the \\(k\\)-means problem. 
 
 > Suppose each point \\(x\\) also has a color feature \\(g(x)\\), such that we can determine the fraction of points with a particular color within each cluster. Then the goal then becomes to make sure these cluster-specific or "local" fractional values match the overall "global" proportions of colors reflected in the data. For example, if we have 15 points of which 5 are red and 10 are blue, and we want to cluster them into 5 clusters, then each cluster should contain 1 red and 2 blue points. 
 
