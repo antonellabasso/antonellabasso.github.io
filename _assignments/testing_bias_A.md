@@ -1,6 +1,6 @@
 ---
 code: CSCI1951Z
-title: Testing Bias - Part A
+title: Testing Bias
 mathjax: true
 layout: page
 categories: media
