@@ -1,15 +1,17 @@
 ---
 code: CSCI1951Z
-title: Testing Bias - Part B
+title: How Do Design Choices Affect Fairness?
 mathjax: true
 layout: page
 categories: media
 permalink: /collections/:title
 ---
 
-<h1> Experimenting With the Ways in Which Design Choices Affect Fairness </h1>
+<!-- <h1> Experimenting With the Ways in Which Design Choices Affect Fairness </h1> -->
 
-<h3> Task: </h3>
+<h1> I. Building, Training and Evaluating a Model </h1>
+
+<!--  <h3> Task: </h3> -->
 
 We will be working with a dataset from [Folktables](https://github.com/zykls/folktables), a Python package that provides access to datasets derived from the US Census. The data provided by this library is sourced from the [American Community Survey](https://www.census.gov/programs-surveys/acs), a demographics survey program that gathers information about individuals' educational attainment, income, employment, demographic information, etc. First, we download and process a dataset from California 2018. 
 
@@ -303,12 +305,173 @@ the sufficiency of the prediction and the group is 1.196133899104196
 
 <h1> II. Resampling </h1>
 
-<h3> Task: </h3>
+We now retrain our model using inputs that have a different ratio of elements in demographic groups to observe how the fairness measures change. That is, by modifying the frequency at which different groups appear in the training set. To achieve this, we implement the ***uniform sampling*** method described in Algorithm 4 of [*Data Preprocessing Techniques for Classification Without Discrimination*](https://link.springer.com/article/10.1007/s10115-011-0463-8), wherein the chance of sampling any given point within a group is uniform. As described, "all the data objects of the same group have the same chance of being duplicated or skipped". 
 
+Section 5.3 details the partitioning of the dataset into various groups of interest. Specifically, our goal is to rebalance these groups, while maintaining the total number of training data points the same, such that some observations are skipped and others duplicated. We achieve this by implementing a weighting approach to calculate the necessary sample weights for each group according to the formulas described in the paper.
 
+{% highlight python %}
+
+## Weighting Approach 
+def compute_sample_weight(y, group):
+  """
+  Computes sample weights according to the algorithm described in the paper.
+
+  Args:
+    y     (np.ndarray): Training labels.
+    group (np.ndarray): Array of indices corresponding to group membership.                 
+
+  Returns:
+    list: sample weight
+    dict: weight dict
+  """
+  assert(len(y) == len(group))
+
+  # TODO: calculate sample weight
+
+  name_keys = ["N1", "N2", "P1", "P2"]
+  weight_values = []
+
+  for i in np.unique(y):
+    for j in np.unique(group):
+      numer = len(np.where(y == i)[0])*len(np.where(group == j)[0])
+      denom = len(y)*len(np.intersect1d(np.where(y == i)[0], np.where(group == j)[0]))
+      weight = numer/denom
+      weight_values.append(weight)
+
+  weight_dict = dict(map(lambda k,v : (k,v), name_keys, weight_values))
+
+  sample_weight = []
+
+  for p in range(len(y)):
+    if y[p] == 0:
+      if group[p] == 1:
+        sample_weight.append(weight_dict["N1"])
+      else:
+        sample_weight.append(weight_dict["N2"])
+    elif y[p] == 1:
+      if group[p] == 1:
+        sample_weight.append(weight_dict["P1"])
+      else:
+        sample_weight.append(weight_dict["P2"])
+
+  return sample_weight, weight_dict
+  
+# NOTE: We later use `sample_weight` in cost-sensitive learning
+#       and `weight_dict` in uniform sampling
+
+sample_weight, weight_dict = compute_sample_weight(y_train, group_train)
+print(weight_dict)
+
+{% endhighlight %}
+
+```
+{'N1': 0.980464144062951, 'N2': 1.2972056964427827, 'P1': 1.1403499657377425, 'P2': 0.981331954005014}
+```
+
+{% highlight python %}
+
+## Uniform Sampling 
+def uniform_sampling(X, y, group, weight_dict):
+  """
+  Perform uniform sampling given a `weight_dict`
+
+  Args:
+    X     (np.ndarray): Training data.    
+    y     (np.ndarray): Training labels.
+    group (np.ndarray): Array of indices corresponding to group membership.
+    weight_dict (dict): Dict containing weights for different groups.             
+
+  Returns:
+    np.ndarray: Sampled training data
+    np.ndarray: Corresponding sampled training labels
+    np.ndarray: Corresponding sampled array of group membership
+  """
+  # TODO: perform uniform sampling
+
+  idx_N1 = np.intersect1d(np.where(y == 0)[0], np.where(group == 1)[0])
+  idx_N2 = np.intersect1d(np.where(y == 0)[0], np.where(group == 2)[0])
+  idx_P1 = np.intersect1d(np.where(y == 1)[0], np.where(group == 1)[0])
+  idx_P2 = np.intersect1d(np.where(y == 1)[0], np.where(group == 2)[0])
+
+  samp_size_N1 = round(weight_dict["N1"]*len(idx_N1))
+  samp_size_N2 = round(weight_dict["N2"]*len(idx_N2))
+  samp_size_P1 = round(weight_dict["P1"]*len(idx_P1))
+  samp_size_P2 = round(weight_dict["P2"]*len(idx_P2))
+
+  samp_idx_N1 = [np.random.choice(idx_N1) for i in range(samp_size_N1)]
+  samp_idx_N2 = [np.random.choice(idx_N2) for i in range(samp_size_N2)]
+  samp_idx_P1 = [np.random.choice(idx_P1) for i in range(samp_size_P1)]
+  samp_idx_P2 = [np.random.choice(idx_P2) for i in range(samp_size_P2)]
+
+  samp_indices = samp_idx_N1 + samp_idx_N2 + samp_idx_P1 + samp_idx_P2
+
+  X_sampled = X[samp_indices]
+  y_sampled = y[samp_indices]
+  group_sampled = group[samp_indices]
+
+  return X_sampled, y_sampled, group_sampled
+
+# sample from training data
+X_sampled, y_sampled, group_sampled = uniform_sampling(X_train, y_train, group_train, weight_dict)
+
+model = train(X_sampled, y_sampled)
+yhat = model.predict(X_test)
+eval(yhat, y_test, group_test, "uniform_sampling")
+
+{% endhighlight %}
+
+```
+Results from the uniform_sampling model: 
+the indepence of prediction and group is  1.5481312022885463
+the true positive separation is  1.30027948616628
+the false positive separation is  1.1860036832412522
+the sufficiency of the prediction and the group is 1.2419123309342532
+```
 
 <h1> III. Cost-Sensitive Learning </h1>
 
-<h3> Task: </h3>
+Lastly, we train our model using a different measure of cost&mdash;not accuracy, but cost-sensitive accuracy&mdash;to observe what happens to the output. We refer to the `LogisticRegression` classifier [documentation](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) for guidance.
+
+{% highlight python %}
+
+def train_weighted(X_train, y_train):
+  """
+  Defines and trains a logistic regression model on the training data.
+  Applies weighting on training the model.
+
+  Args:
+    X_train (np.ndarray): Training inputs.
+    y_train (np.ndarray): Training labels.                 
+
+  Returns:
+    sklearn.pipeline.Pipeline: trained model
+  """
+  # TODO: train model
+  
+  sample_weights = np.array(compute_sample_weight(y_train, group_train)[0])
+
+  LR_pipeline = make_pipeline(StandardScaler(), LogisticRegression())
+  model_train = LR_pipeline.fit(X_train, y_train, 
+                                logisticregression__sample_weight = sample_weights)
+
+  return model_train
+
+{% endhighlight %}
+
+{% highlight python %}
+
+weighted_model = train_weighted(X_train, y_train)
+yhat = weighted_model.predict(X_test)
+eval(yhat, y_test, group_test, "weighted")
+
+{% endhighlight %}
+
+```
+Results from the weighted model: 
+the indepence of prediction and group is  1.5036432659126076
+the true positive separation is  1.2457235915065032
+the false positive separation is  1.1630769230769231
+the sufficiency of the prediction and the group is 1.2250078385288548
+```
 
 
