@@ -61,7 +61,7 @@ In various exploratory data mining tasks the goal is to *cluster* a collection o
 
 we can then outline the \\(k\\)-means problem as follows. Partition the points into \\(k\\) clusters \\(C_1, \dots, C_k\\) such that the sum of squared distance from each point to its cluster center is minimized, where the center of a cluster is defined as the *centroid* of the cluster:  
 
-\\[ \mu\(C\) = \sum_{x \in C} \frac{x}{\mid C \mid}, \]
+\\[ \mu\(C\) = \sum_{x \in C} \frac{x}{\mid C \mid}, \\]
 
 where \\(\mid C \mid\\) is the total number of points in the cluster. More precisely, the goal is to find \\(C_1, \dots, C_k\\) such that the following expression is minimized.
 
