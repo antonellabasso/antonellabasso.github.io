@@ -473,5 +473,3 @@ the true positive separation is  1.2457235915065032
 the false positive separation is  1.1630769230769231
 the sufficiency of the prediction and the group is 1.2250078385288548
 ```
-
-
