@@ -56,11 +56,11 @@ Focusing on the success rate to guide our estimation of discriminatory effects i
 
 \\[ r_i \sim \text{Bin}\(n_i,p_i\), \\] 
 \\[ \text{logit}\(p_i\) = \alpha_{S_i} + \delta_{S_i}W_i, \\] 
-\\[ \alpha_{S_i} \sim \text{N}\(\mu_{\alpha},\sigma^2_{\alpha}\), \\] 
-\\[ \delta_{S_i} \sim \text{N}\(\mu_{\delta},\sigma^2_{\delta}\), \\] 
+\\[ \alpha_{S_i} \sim \text{N}\(\mu_{\alpha},\sigma_{\alpha}^2\), \\] 
+\\[ \delta_{S_i} \sim \text{N}\(\mu_{\delta},\sigma_{\delta}^2\), \\] 
 \\[ \mu_{\alpha} \sim \text{N}\(0,2^2\), \\] 
 \\[ \mu_{\delta} \sim \text{N}\(0,2^2\), \\] 
 \\[ \sigma_{\alpha} \sim \text{Unif}\(0,2\), \\] 
 \\[ \sigma_{\delta} \sim \text{Unif}\(0,2\), \\]
 
-where \\(\sigma^2_{\alpha}\\) and \\(\sigma^2_{\delta}\\) are the hierarchical variance parameters.
+where \\(\sigma_{\alpha}^2\\) and \\(\sigma_{\delta}^2\\) are the hierarchical variance parameters. We assume noninformative uniform hyperpriors on \\(\sigma_{\alpha}\\) and \\(\sigma_{\delta}\\), which according to Gelman et al. should not result in an improper posterior density due to the large number of clusters in the data, and posed no problems for Jackman despite nonconjugacy (source 7, 8).
