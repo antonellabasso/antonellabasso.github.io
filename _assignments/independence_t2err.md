@@ -63,7 +63,7 @@ T-tests are among the many statistical tests that rely on the assumption of iid 
 {% highlight R %}
 
 ## Libraries
-library(ggplot2)
+library(tidyverse)
 library(latex2exp)
 
 {% endhighlight %}
