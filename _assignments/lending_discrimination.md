@@ -96,14 +96,14 @@ Given our specific focus on the discriminatory effects, we further assess the fi
 
 Simulating a new discriminatory effect \\(\delta_{\text{new}}\\) for a hypothetical state, we see that although it is approximately equal to the posterior mean of \\(\mu_{\delta}\approx 0.72\\) on average, it has a much narrower 95% HDR interval, as shown in Table 3 below. Moreover, while this new effect also yields a posterior predictive p-value close to 1, it is in fact smaller for the average state-level effect, therefore providing more hope for predictive potential. It should be noted however that such a result still does not rule out the possibility of overfitting entirely.
 
-\\[\text{P}\\(\delta_{\text{new}} > 0\\) \approx 0.9967\\]
+\\[\text{P}\(\delta_{\text{new}} \ge 0\) \approx 0.9967\\]
 
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl3.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl3.png" width="70%" alt=""></center>
 
 Figure 6 gives the posterior predictive density for \\(\delta_{\text{new}}\\) generated from 10,000 sampled predictions. Additionally, Figure 7 gives the posterior odds ratios of loan approval for each racial group across states along with those observed in the data. Overall, it is evident that states reflect not only significant, but pretty consistent levels of discrimination, further justifying our choice to model effects exchangeably.
  
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig6.png" width="80%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig7.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig6.png" width="70%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig7.png" width="70%" alt=""></center>
 
 <h1> VI. Discussion </h1>
 
