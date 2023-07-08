@@ -75,15 +75,15 @@ Similar to Jackman’s proposed method, we implement our hierarchical model with
 
 Figures 1-4 demonstrate that our chain successfully converges to the target posterior densities rather quickly, seeing as parameter values remain stabilized after burn-in. Given the large number of effect parameters in our model, we only provide trace plots for the hyperparameters as they reflect similar states of achieved convergence. Table 1 below provides their corresponding posterior estimates as means of the 10,000 saved samples and 95\% highest density region (HDR) credible intervals. Notably, we see little posterior uncertainty in \\(\sigma_{\delta}\\) despite the much larger 95\% HDR interval for \\(\mu_{\delta}\\). However, with a posterior mean of approximately 0.72 and a credible interval that still does not contain 0, it follows that our model supports the intuition that positive state-level discriminatory effects in fact exist across states on average.
 
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig1.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig2.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig3.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig4.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig5.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig6.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig7.png" width="90%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig1.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig2.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig3.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig4.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig5.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig6.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_fig7.png" width="80%" alt=""></center>
 
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl1.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl2.png" width="90%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl3.png" width="90%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl1.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl2.png" width="80%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/LD_tbl3.png" width="80%" alt=""></center>
 
