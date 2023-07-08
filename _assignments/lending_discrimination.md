@@ -51,4 +51,16 @@ similar to that adopted by Jackman in an analysis of a cluster-randomized experi
 treatment in the 2004 U.S. presidential election” (source 7). For our purposes, we assume observations are clustered by state and that each cluster 
 comprises two observations, namely, 2017 count data for each racial group of interest.
 
+Focusing on the success rate to guide our estimation of discriminatory effects in loan approval across states, we implement the following hierarchical binomial model. For \\(i = 1,2,...,100\\), let \\(n_i\\) be the total number of applicants and \\(r_i\\) be the number of approvals such that \\(p_i = r_i / n_i\\) gives the \\(i\\)th observation’s approval rate. Moreover, let \\(S_i \in \\{1,2,...,50\\}\\) be the state indicator and \\(W_i \in \\{0, 1\\}\\) be the racial group indicator for observation \\(i\\), such that \\(S_i = 1\\) and \\(W_i = 1\\) jointly denote the white racial group observation for the first state alphabetically&mdash;Alabama (AL). Assuming normally distributed effects \\(\alpha_{S_i}\\) and \\(\delta_{S_i}\\) with normal mean parameter densities \\(\mu_{\alpha}\\) and \\(\mu_{\delta}\\), we have
 
+
+\\[ r_i \sim \text{Bin}\(n_i,p_i\), \\] 
+\\[ \text{logit}\(p_i\) = \alpha_{S_i} + \delta_{S_i}W_i, \\] 
+\\[ \alpha_{S_i} \sim \text{N}\(\mu_{\alpha},\sigma^2_{\alpha}\), \\] 
+\\[ \delta_{S_i} \sim \text{N}\(\mu_{\delta},\sigma^2_{\delta}\), \\] 
+\\[ \mu_{\alpha} \sim \text{N}\(0,2^2\), \\] 
+\\[ \mu_{\delta} \sim \text{N}\(0,2^2\), \\] 
+\\[ \sigma_{\alpha} \sim \text{Unif}\(0,2\), \\] 
+\\[ \sigma_{\delta} \sim \text{Unif}\(0,2\), \\]
+
+where \\(\sigma^2_{\alpha}\\) and \\(\sigma^2_{\delta}\\) are the hierarchical variance parameters.
