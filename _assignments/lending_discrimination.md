@@ -10,21 +10,12 @@ permalink: /collections/:title
 <h1> I. Introduction </h1>
 
 Despite explicit laws to protect against lending discrimination&mdash;such as the Fair Housing Act (FHA), the Equal Credit Opportunity Act (ECOA),
-and the Community Reinvestment Act (CRA) (source 1)&mdash;Black families in the U.S. continue to face alarming levels of injustice in loan lending scenarios, 
-which exacerbates racial inequities like those of homeownership. Specifically, when lenders choose to ignore an individual’s race in making decisions, 
-instead using income and credit score as a basis for loan approval, they ignore the prominent role that systemic racism plays in economic disparity and
-implicitly contribute to widening the racial wealth gap (source 2). In an attempt to bring attention to our nation’s racially disproportionate and systemic 
-denial of loans that harms American citizens and prevents wealth building in communities of color, this analysis aims to utilize hierarchical 
-Bayesian modeling to gauge the degree of discrimination in loan lending decisions across all 50 states. In addition to discussing the data used 
-for estimating our parameters of interest, we outline our chosen model as well as its implementation using an MCMC algorithm, and discuss our results. 
-Ultimately, we hope to show how Bayesian methods may be used to infer about our institutional decision making practices and not only discover 
-discrimination but estimate it in a way that may influence more adequate and substantive policies.
+and the Community Reinvestment Act (CRA) (source 1)&mdash;Black families in the U.S. continue to face alarming levels of injustice in loan lending scenarios, which exacerbates racial inequities like those of homeownership. Specifically, when lenders choose to ignore an individual’s race in making decisions, instead using income and credit score as a basis for loan approval, they ignore the prominent role that systemic racism plays in economic disparity and implicitly contribute to widening the racial wealth gap (source 2). In an attempt to bring attention to our nation’s racially disproportionate and systemic denial of loans that harms American citizens and prevents wealth building in communities of color, this analysis aims to utilize hierarchical Bayesian modeling to gauge the degree of discrimination in loan lending decisions across all 50 states. In addition to discussing the data used for estimating our parameters of interest, we outline our chosen model as well as its implementation using an MCMC algorithm, and discuss our results. Ultimately, we hope to show how Bayesian methods may be used to infer about our institutional decision making practices and not only discover discrimination but estimate it in a way that may influence more adequate and substantive policies.
 
 <h1> II. Data </h1>
 
 The data used for this analysis, obtained from the Consumer Financial Protection Bureau, spans thousands of 2017 loan application records from 
-financial institutions across the U.S. that have been made publicly available under the Home Mortgage Disclosure Act (HMDA) (source 3).
-The records gathered reflect individual applications wherein one of the following eight potential actions were taken (source 4).
+financial institutions across the U.S. that have been made publicly available under the Home Mortgage Disclosure Act (HMDA) (source 3). The records gathered reflect individual applications wherein one of the following eight potential actions were taken (source 4).
 
 1. Loan originated
 2. Application approved but not accepted
@@ -117,13 +108,14 @@ Despite the limitations discussed, our results suggest that lending discriminati
 
 <h1> References </h1>
 
--
-
-
-
-- McDonald, J.H. (2014). Independence. [*Handbook of Biological Statistics (3rd Edition), pp. 131-132*](http://www.biostathandbook.com/independence.html). Sparky House Publishing, Baltimore, Maryland. ISBN-13 978-1-478-63789-9
-- Simon, S. (2000, September 18). [*StATS: What is a t statistic?*](http://www.pmean.com/definitions/tstat.htm) P.Mean. http://www.pmean.com/definitions/tstat.htm
-- [*How are dependent and independent samples different?*](https://support.minitab.com/en-us/minitab/21/help-and-how-to/statistics/basic-statistics/supporting-topics/tests-of-means/how-are-dependent-and-independent-samples-different/) (n.d.). Minitab 21 Support. https://support.minitab.com/en-us/minitab/21/help-and-how-to/statistics/basic-statistics/supporting-topics/tests-of-means/how-are-dependent-and-independent-samples-different/
+- Folger, J. (2022, August 14). [*The History of Lending Discrimination*](https://www.investopedia.com/the-history-of-lending-discrimination-5076948). Investopedia. https://www.investopedia.com/the-history-of-lending-discrimination-5076948
+- Reynolds, L., Perry, V. and Choi, J.H. (2021, October 13). [*Closing the Homeownership Gap Will Require Rooting Systemic Racism Out of Mortgage Underwriting*](https://www.urban.org/urban-wire/closing-homeownership-gap-will-require-rooting-systemic-racism-out-mortgage-underwriting). Urban Institute. https://www.urban.org/urban-wire/closing-homeownership-gap-will-require-rooting-systemic-racism-out-mortgage-underwriting
+- [*Download HMDA Data*](https://www.consumerfinance.gov/data-research/hmda/historic-data/?geo=wy&records=all-records&field_descriptions=codes). (n.d.). Consumer Financial Protection Bureau. https://www.consumerfinance.gov/data-research/hmda/historic-data/?geo=wy&records=all-records&field_descriptions=codes
+- [*A Guide To HMDA Reporting: Getting It Right!*](https://www.ffiec.gov/hmda/pdf/2023Guide.pdf) (2023, January 1). Federal Financial Institutions Examination Council. https://www.ffiec.gov/hmda/guide.htm
+- Loftus, J.R., Russell, C., Kusner, M.J. and Silva, R. (2018, May 15). [*Causal Reasoning for Algorithmic Fairness*](https://arxiv.org/pdf/1805.05859.pdf). https://doi.org/10.48550/arXiv.1805.05859
+- Green, D.P. and Vavreck, L. (2008). [*Analysis of Cluster-Randomized Experiments: A Comparison of Alternative Estimation Approaches*](http://www.donaldgreen.com/wp-content/uploads/2015/09/Green-Vavreck-2008_Analysis-of-cluster-randomized-trials.pdf). Political Analysis (Volume 16, 2nd Edition) pp. 138–152. Cambridge University Press. https://doi.org/10.1093/pan/mpm025
+- Jackman, S. (2009). [*Hierarchical Statistical Models*](https://onlinelibrary.wiley.com/doi/10.1002/9780470686621.ch7). Bayesian Analysis for the Social Sciences, pp. 299–378. John Wiley & Sons, Ltd. ISBN 978-0-470-68662-1.
+- Gelman, A., Carlin, J.B., Stern, H.S., Dunson, D.B., Vehtari, A. and Rubin, D.B. (2014). Hierarchical Models. Bayesian Data Analysis (3rd Edition), pp. 101–132. Chapman and Hall/CRC. ISBN-13 978-1-439-84095-5.
 
 
 <h1> Code Appendix </h1>
