@@ -52,7 +52,7 @@ T-tests are among the many statistical tests that rely on the assumption of iid 
 
 <h1> References </h1>
 
-- McDonald, J.H. (2014). Independence. [*Handbook of Biological Statistics (3rd Edition), pp. 131-132*](http://www.biostathandbook.com/independence.html). Sparky House Publishing, Baltimore, Maryland. ISBN-13 978-1-478-63789-9
+- McDonald, J.H. (2014). Independence. [*Handbook of Biological Statistics (3rd Edition), pp. 131-132*](http://www.biostathandbook.com/independence.html). Sparky House Publishing, Baltimore, Maryland. ISBN-13 978-1-478-63789-9.
 - Simon, S. (2000, September 18). [*StATS: What is a t statistic?*](http://www.pmean.com/definitions/tstat.htm) P.Mean. http://www.pmean.com/definitions/tstat.htm
 - [*How are dependent and independent samples different?*](https://support.minitab.com/en-us/minitab/21/help-and-how-to/statistics/basic-statistics/supporting-topics/tests-of-means/how-are-dependent-and-independent-samples-different/) (n.d.). Minitab 21 Support. https://support.minitab.com/en-us/minitab/21/help-and-how-to/statistics/basic-statistics/supporting-topics/tests-of-means/how-are-dependent-and-independent-samples-different/
 - Mcleod, S. (2019, July 4). [*What Are Type I and Type II Errors?*](https://www.simplypsychology.org/type_i_and_type_ii_errors.html) Simply Psychology. https://www.simplypsychology.org/type_i_and_type_ii_errors.html
