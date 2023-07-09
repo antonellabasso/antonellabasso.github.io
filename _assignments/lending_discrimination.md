@@ -465,5 +465,3 @@ odds_comp_plot <- ggplot(odds_comps_df) +
         egend.title=element_text(size=10))
         
 {% endhighlight %}
-
-
