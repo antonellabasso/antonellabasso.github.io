@@ -16,6 +16,7 @@ In light of the ongoing social injustices catalyzed and compounded by automated 
 > “Counterfactuals are the building blocks of moral behavior as well as scientific thought. The ability to reflect on one’s past actions and envision alternative scenarios is the basis of free will and social responsibility.” — *Judea Pearl, "The Book of Why"*
 
 #### [Full Paper](https://antonellabasso.github.io/Basso_Thesis.pdf)
+### [R Code](https://antonellabasso.github.io/Basso_Thesis_Code.pdf)
 
 ![Poster Presentation](https://antonellabasso.github.io/IMAGES/Basso_Poster.png) 
 [<i> Public Health Research Day </i>](https://globalepidemics.org/brown-phrd-2023/) 
