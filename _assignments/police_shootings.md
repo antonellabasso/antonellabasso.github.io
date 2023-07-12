@@ -21,7 +21,7 @@ permalink: /collections/:title
 <center><b> Research Questions: </b></center> 
 
 - To what extent does one’s race impact their likelihood of being shot or killed by police in the US?
-- How does geograohical location (at the state-level) contribute to one’s chances of falling victim to police brutality?
+- How does location (at the state-level) contribute to one’s chances of falling victim to police brutality?
 - Is there a potential relationship between a state’s political climate and the level of racial inequality evidenced in police shootings?
 - What inferences can we make about the US criminal justice system and the role that race plays in police violence?
 
