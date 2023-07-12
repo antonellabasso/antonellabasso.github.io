@@ -18,14 +18,14 @@ permalink: /collections/:title
 # Exposing Racial Disparities in (US) Policing\Police Violence
 -->
 
-<center><b> Exploratory Questions </b></center> 
+<center><b> Research Questions: </b></center> 
 
 - To what extent does one’s race impact their likelihood of being shot or killed by police in the US?
 - How does geograohical location (at the state-level) contribute to one’s chances of falling victim to police brutality?
 - Is there a potential relationship between a state’s political climate and the level of racial inequality evidenced in police shootings?
 - What inferences can we make about the US criminal justice system and the role that race plays in police violence?
 
-> The police shooting data used for analysis, when considered in isolation, has the potential to create misleading information that undermines these core research question(s). Therefore, our objective is to employ appropriate programming and data science tools to contextualize and transform the data, enabling us to obtain more reliable insights in order to address them effectively. 
+> The police shooting data used for this analysis, when considered in isolation, has the potential to create misleading information that undermines our core research questions. Therefore, our objective is to employ appropriate programming and data science tools to contextualize and transform the data, enabling us to obtain more reliable insights for addressing them effectively. 
 
 <h1> I. Introduction </h1>
 
