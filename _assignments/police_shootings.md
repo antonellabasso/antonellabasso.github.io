@@ -69,9 +69,9 @@ According to the US Census Bureau, Black and white folks made up roughly 13% and
 
 <!-- That is, for police shootings to have been consistent with American Black and white populations, Black shootings would've had to make up 11% of all shootings&mdash;approximately 5/6 of the corresponding US racial population. Yet, based on percentages alone, while the proportion of Black folks shot by police is almost double the proportion of Black folks in the US, the proportion of White folks shot by police is about 16% smaller than their US population. -->
 
-To compare the number of Black and white victims of police violence in the US, we first transform our data to account for differences in race populations across states. Specifically, we assign a weight \\(w_{ij}\\) to each state's documented number of race-specific shootings \\(n_{ij}\\) that is proportional to its corresponding racial population. Letting \\(p_{ij}\\) denote the unscaled population parameter, we compute the following statistic for each state \\(j\\) and racial category \\(i\\):
+To compare the number of Black and white victims of police violence in the US, we first transform our data to account for differences in race populations across states. Specifically, we assign a weight \\(w_{ij}\\) to each state's documented number of race-specific shootings \\(n_{ij}\\) that is proportional to its corresponding racial population. Letting \\(p_{ij}\\) denote the unscaled population parameter, we compute the following statistic \\(x_{ij}\\) for each state \\(j\\) and racial category \\(i\in\{b, w\}\\):
 
-\\[n_{ij}w_{ij}, \text{where } w_{ij}=frac{1}{p_{ij}}\times 10^{-6}.\\]
+\\[x_{ij} = n_{ij}w_{ij}, \text{ where } w_{ij} = \frac{1}{p_{ij}}\times 10^{-6}.\\]
 
 We note that since \\(p_{ij}\\) is unscaled, we convert populations to millions, scaling \\(p_{ij}\\) by 1/1,000,000 for simplicity and visualization purposes. The figure below shows the change in rates of race-specific shootings when accounting for the corresponding racial populations across states. 
 
@@ -83,13 +83,13 @@ Evidently, despite the fact that the actual number of white victims is significa
 
 To observe the discrepancies in the weighted proportions of Black and White folks shot by police in each state (bar graph on the right-hand side above), we refer to the following two metrics:
 
-1. Differences: weighted Black shootings − weighted white shootings
+1. Differences: weighted Black shootings − weighted white shootings \\[d_j = x_{bj}-x_{wj}\\]
 - Raw differences in weighted proportions shed light on these discrepancies as it pertains to how many shootings there are in each state.
 
-2. Ratios: weighted Black shootings/weighted white shootings
+2. Ratios: weighted Black shootings/weighted white shootings \\[r_j = x_{bj}/x_{wj}\\]
 - Weighted proportion ratios tell us how much larger proportions of Black shootings are than in comparison to the proportions of White shootings. These shed light on the relative differences between shootings irrespective of the sheer number of people shot in each state. 
 
-Both metrics provide a way to analyze racial discrepancies in police shootings across the US by giving us an idea of how much police violence is present in each state and the extent to which one group is affected purely in contrast to the other. For each, we construct a bar graph, violin plot, and US map, to better visualize these discrepancies as they relate to the dominant political party in each state.
+Both metrics provide a way to analyze racial discrepancies in police shootings across the US by giving us an idea of how much police violence is present in each state and the extent to which one group is affected purely in contrast to the other. For each, we construct a bar graph, violin plot, and US map, to better visualize these discrepancies as they relate to the dominant political party in each state
 
 <!--
 ****** NOTE: Differences allow us to visualize discrepancies in terms of the sheer level of police violence in given states, while ratios provide a sense for how large this gap is irrespective of how many shootings occurred. For example UT exhibits significantly more police violence than RI, but the actual disparity in violence happens to be larger in RI.
