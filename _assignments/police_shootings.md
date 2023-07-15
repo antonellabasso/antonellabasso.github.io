@@ -52,14 +52,17 @@ Upon initial examination, the first dataset alone does not provide a comprehensi
 To substantiate and conduct our analysis, we appeal to three additional sources:
 
 1. [*Quick Facts*](https://www.census.gov/quickfacts/fact/table/US/PST045219)
+   
 - This *US Census* data provides 2019 racial population estimates in terms of percentages.
 – It will be used to evaluate proportions of shootings based on race as they relate to proportions of racial subgroups that make up the total US population.
 
 2. [*Most Republican States*](https://worldpopulationreview.com/state-rankings/most-republican-states) and [*Most Racist States*](https://worldpopulationreview.com/state-rankings/most-racist-states)
-- These 2021 articles from the *World Population Review* are used to identify the most "Republican" and "racist" states in the country based on the *Cook Partisan Voting Index (CPVI)*, which “measures how strongly a state leans Republican or Democratic compared to the entire nation”, as well as instances of hate crimes and hate speech that “can also be used to determine where racism is most prevalent”.'
+   
+- These 2021 articles from the *World Population Review* are used to identify the most "Republican" and "racist" states in the country based on the *Cook Partisan Voting Index (CPVI)*, which “measures how strongly a state leans Republican or Democratic compared to the entire nation”, as well as instances of hate crimes and hate speech that “can also be used to determine where racism is most prevalent”.
 - They will be used to contextualize our findings and be referenced throughout.
 
 3. [*Mapping the US*](https://cran.r-project.org/web/packages/usmap/vignettes/mapping.html)
+   
 - This article offers packages and instructions for creating US map visualizations of data in R.
 – It will be used to guide our state mappings of racial discrepancies in populations proportions of police shootings.
 
