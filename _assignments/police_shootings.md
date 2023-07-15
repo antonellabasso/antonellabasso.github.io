@@ -89,9 +89,9 @@ To explore the racial discrepancies in number of individuals shot by police rela
 
 These metrics provide a way to analyze racial disparities in police shootings by comparing observed rates relative to one another and to the degree of state-wide police violence documented. Specifically, while differences shed light on these discrepancies as it pertains to the sheer number of victims, ratios provide a more stark comparison of shooting rates, ignoring the magnitude of police brutality present in each state. For each of the two measures we construct a bar graph, violin plot and US map, as depicted below, to visualize and better gauge these racial disparities as they relate to geographical location and political climate at the state level.
 
-<left><img src="https://antonellabasso.github.io/IMAGES/PS_fig2.png" width="50%" alt=""></left>
-<right><img src="https://antonellabasso.github.io/IMAGES/PS_fig3.png" width="50%" alt=""></right>
-<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig4.png" width="90%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig2.png" width="70%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig3.png" width="70%" alt=""></center>
+<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig4.png" width="70%" alt=""></center>
 
 From these graphs, it can be noticed that 8 out of the 10 most significant differences in police shootings over the last five years belonged to red states, the largest of which was documented in UT&mdash;the second most Republican state in the US, according to the *World Population Review*. Moreover, the bar graph shows that the second largest discrepancy corresponds to Vermont, which despite being a blue state, is among the most racist states in the country, as found by the *World Population Review*. Trailing behind these are Montana, Wyoming, West Virginia, North Dakota, South Dakota, Oklahoma, and Iowa&mdash;all red states of which 5 are among the 10 most Republican in the country, according to the same article. Despite not offering definitive proof of a relationship between political climate and racial disparity in police violence, this information substantiates our findings, suggesting a potential influence of political climate on both the frequency of shootings and the racial gap in police brutality.
 
