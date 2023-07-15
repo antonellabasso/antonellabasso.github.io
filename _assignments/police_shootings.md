@@ -36,16 +36,16 @@ Unwarranted deaths at the hands of law enforcement, like those of George Floyd a
 Our analysis is based on data obtained from three primary sources:
 
 1. [*US Police Shootings*](https://www.kaggle.com/datasets/ahsen1330/us-police-shootings)
-- This *Kaggle* dataset provides basic information about individuals shot or killed by police in the US between 2015 and 2020, including their name, age, gender, race, and details about the incidents.
-- Moreover, it includes factors such as the location, date, shooting circumstances, whether the person was armed, whether they exhibited signs of mental illness, and whether the incident was recorded.
+   - This *Kaggle* dataset provides basic information about individuals shot or killed by police in the US between 2015 and 2020, including their name, age, gender, race, and details about the incidents.
+   - Moreover, it includes factors such as the location, date, shooting circumstances, whether the person was armed, whether they exhibited signs of mental illness, and whether the incident was recorded.
 
 2. [*Bridged-Race Population Estimates 1990-2020 Results*](https://wonder.cdc.gov/controller/datarequest/D178)
-- This *CDC WONDER* dataset offers estimated population figures for different racial groups in each state from 1990 to 2020.
-- Its purpose in our analysis is to provide contextual information about racial populations in each state.
+   - This *CDC WONDER* dataset offers estimated population figures for different racial groups in each state from 1990 to 2020.
+   - Its purpose in our analysis is to provide contextual information about racial populations in each state.
 
 3. [*List of Blue States and Red States*](https://www.gkgigs.com/list-of-blue-states-and-red-states/)
-- This *GkGigs* dataset provides a list of states along with their dominant political party affiliation (blue/Democrat or red/Republican).
-- We use this information to categorize states based on their political climate.
+   - This *GkGigs* dataset provides a list of states along with their dominant political party affiliation (blue/Democrat or red/Republican).
+   - We use this information to categorize states based on their political climate.
 
 Upon initial examination, the first dataset alone does not provide a comprehensive understanding of racial disparities in police shootings. A simple observation of the total number of Black individuals compared to white individuals shot or killed by law enforcement over the past five years reveals a significantly larger number of white individuals, which contradicts our expectations. However, relying solely on raw numbers of shootings is insufficient for making valid inferences about targeted racial groups. To mitigate biased results, we incorporate the second dataset, which provides state-level racial population estimates. This allows us to analyze the number of people shot or killed in each racial group relative to the population composition of each racial category in a given area. By examining the data in terms of proportions, we aim to make unbiased comparisons that expose the true varying degrees of racial inequality in police brutality across the US. Lastly, we incorporate the third dataset into our analysis to explore potential relationships between a state's political climate and racial disparities in incidents of police violence.
 
