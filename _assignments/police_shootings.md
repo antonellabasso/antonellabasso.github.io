@@ -73,7 +73,7 @@ To compare the number of Black and white victims of police violence in the US, w
 
 \\[x_{ij} = n_{ij}w_{ij}, \text{ where } w_{ij} = \frac{1}{p_{ij}}\times 10^{-6}.\\]
 
-We note that since \\(p_{ij}\\) is unscaled, we convert populations to millions, scaling \\(p_{ij}\\) by 1/1,000,000 for simplicity and visualization purposes. The figure below shows the change in rates of race-specific shootings when accounting for the corresponding racial populations across states. 
+We note that since \\(p_{ij}\\) is unscaled, we convert populations to millions, scaling \\(p_{ij}\\) by \\(1/1,000,000\\) for simplicity and visualization purposes. The figure below shows the change in rates of race-specific shootings when accounting for the corresponding racial populations across states. 
 
 <center><img src="https://antonellabasso.github.io/IMAGES/PS_fig1.png" width="70%" alt=""></center>
 
@@ -81,32 +81,43 @@ Evidently, despite the fact that the actual number of white victims is significa
 
 <h1> IV. Analysis </h1>
 
-To observe the discrepancies in the weighted proportions of Black and White folks shot by police in each state (bar graph on the right-hand side above), we refer to the following two metrics:
+To explore the racial discrepancies in number of individuals shot by police relative to state populations, as depicted in the rightmost bar graph of the figure above, we shift our focus to the following two measures:
 
-1. Differences: weighted Black shootings − weighted white shootings \\[d_j = x_{bj}-x_{wj}\\]
-- Raw differences in weighted proportions shed light on these discrepancies as it pertains to how many shootings there are in each state.
+1. **Difference:** Difference between the number of Black and white shootings per million in the racial population for state \\(j\\). \\[d_j = x_{bj}-x_{wj}\\]
 
-2. Ratios: weighted Black shootings/weighted white shootings \\[r_j = x_{bj}/x_{wj}\\]
-- Weighted proportion ratios tell us how much larger proportions of Black shootings are than in comparison to the proportions of White shootings. These shed light on the relative differences between shootings irrespective of the sheer number of people shot in each state. 
+3. **Ratio:** Ratio of weighted Black to white shootings, i.e., the weighted number of Black victims per white victim. \\[r_j = x_{bj}/x_{wj}\\]
 
-Both metrics provide a way to analyze racial discrepancies in police shootings across the US by giving us an idea of how much police violence is present in each state and the extent to which one group is affected purely in contrast to the other. For each, we construct a bar graph, violin plot, and US map, to better visualize these discrepancies as they relate to the dominant political party in each state
+These metrics provide a way to analyze racial disparities in police shootings by comparing observed rates relative to one another and to the degree of state-wide police violence documented. Specifically, while differences shed light on these discrepancies as it pertains to the sheer number of victims, ratios provide a more stark comparison of shooting rates, ignoring the magnitude of police brutality present in each state. For each of the two measures we construct a bar graph, violin plot and US map, as depicted below, to visualize and better gauge these racial disparities as they relate to geographical location and political climate at the state level.
 
-<!--
-****** NOTE: Differences allow us to visualize discrepancies in terms of the sheer level of police violence in given states, while ratios provide a sense for how large this gap is irrespective of how many shootings occurred. For example UT exhibits significantly more police violence than RI, but the actual disparity in violence happens to be larger in RI.
+<left><img src="https://antonellabasso.github.io/IMAGES/PS_fig2.png" width="50%" alt=""></left>
+<right><img src="https://antonellabasso.github.io/IMAGES/PS_fig3.png" width="50%" alt=""></right>
+<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig4.png" width="90%" alt=""></center>
 
-graphs 
-explanations
-
-<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig2.png" width="70%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig3.png" width="70%" alt=""></center>
-<center><img src="https://antonellabasso.github.io/IMAGES/PS_fig4.png" width="70%" alt=""></center>
+From these graphs, it can be noticed that 8 out of the 10 most significant differences in police shootings over the last five years belonged to red states, the largest of which was documented in UT&mdash;the second most Republican state in the US, according to the *World Population Review*. Moreover, the bar graph shows that the second largest discrepancy corresponds to Vermont, which despite being a blue state, is among the most racist states in the country, as found by the *World Population Review*. Trailing behind these are Montana, Wyoming, West Virginia, North Dakota, South Dakota, Oklahoma, and Iowa&mdash;all red states of which 5 are among the 10 most Republican in the country, according to the same article. Despite not offering definitive proof of a relationship between political climate and racial disparity in police violence, this information substantiates our findings, suggesting a potential influence of political climate on both the frequency of shootings and the racial gap in police brutality.
 
 <center><img src="https://antonellabasso.github.io/IMAGES/PS_fig5.png" width="70%" alt=""></center>
 <center><img src="https://antonellabasso.github.io/IMAGES/PS_fig6.png" width="70%" alt=""></center>
 <center><img src="https://antonellabasso.github.io/IMAGES/PS_fig7.png" width="70%" alt=""></center>
+
+<!--
+These visualizations illustrate the weighted proportion ratios of Black and white shootings, where each value is a realization of how many times larger Black shootings are than white shootings. It is important to note that since these are ratios, they, unlike differences, are not sensitive to the degree of police brutality present in each state. Instead, they reflect the pure relative difference between Black and White shootings. While the US map displays these ratios solely in terms of each state, the violin plot displays them solely in terms of political parties (aﬀiliated with US states). On the other hand, the bar graph displays weighted proportion ratios both in terms of US states and their corresponding political affiliations. 
+
+From these visualizations, we see that discrepancies are more evenly distributed between political parties, with the exception of Rhode Island, which displays the largest ratio between Black and White shootings. This means that despite Rhode Island having significantly fewer police shootings than the states mentioned in the previous section, it has the greatest relative difference between the (weighted) proportion of Black folks shot versus White folks shot. Moreover, we notice that the next two highest ratios are consistent with the two highest differences mentioned before, belonging to Utah and Vermont, which we learned have strong Conservative and racist ties. These graphs show us that there is a slight correlation between the level of police violence present in a given state and the disproportionality of shootings with respect to race. However, we see further that this disproportionality is more evenly spread out among Blue and Red states when it is relativized.
+-->
+
+As mentioned, differences \\(d_j\\) allow us to visualize statewide disparities taking into account the degree of police violence evidenced, meanwhile ratios \\(r_j\\) provide a sense for how large this gap is irrespective of the number of shootings documented. For example, although UT displays a much larger discrepancy in police shootings compared to RI, RI exhibits a greater relative difference in violence between races, irrespective of the number of observed instances. However, we note that given large contrasts in area, population and number of reported shootings, it is possible for smaller samples to have introdued error in our estimates and undermined their validity. Thus, it is important to consider the potential influence of sampling on our results and utilize both metrics in tandem to form inferences about the nature of racial disparity in police violence across the country.
+
+<!--
+Ratios tell us how much larger proportions of Black shootings are than in comparison to the proportions of White shootings. These shed light on the relative differences between shootings irrespective of the sheer number of people shot in each state. 
+
+That is for instance, if there were 3 documented shootings in state j, 2 of which pertained to Black individuals, the claim that police violence is twice as prevalent for Black folks than it is for white folks is one that is unlikely to be statistically significant and may change if shootings were more common.
+
+Ratios are greater for blue states because they have fewer instances, so the disparity is inflated. 
 -->
 
 <h1> V. Conclusion </h1>
+
+Based on the analysis of police shooting data from the last five years, as it pertains to Black and White populations in the US, it is safe to assume that race plays a substantial role in determining one’s likelihood of being shot/killed by police. Not only does the population-based proportion of Black Americans shot by police exceed that of White Americans in every single state, but the magnitude of the discrepancy in such proportions can, in part, be attributed to an area’s political influence and level of racism. Looking at the state-based ratios of Black to White shootings, we notice, with the exception of Rhode Island, that law enforcement across all states display a similar level of discrimination against Black folks, irrispective of a state’s dominant political party. However, the political party factor does play a role in exacerbating these discrepancies. That is, as we saw previously, some of the most Republican states, in addition to Vermont where racism is particularly prominent, showed the highest raw differences in these proportions, and hence, also the highest numbers of police shootings. Thus, not only are Black folks always at greater risk of falling victim to police shootings, but folks who live in areas heavily dominated by Conservative and racist ideologies are at even greater risk due to the vast instances of police violence. The information gathered here paints a rather grim picture of our nation’s police system. Not only does it shed light on the racism embedded within our institutions, but it shows us how Conservative ideologies that parallel inegalitarian beliefs may aggrandize and perpetuate these injustices. For this reason, radical action and intervention is needed, in addition to wide public acknowledgement, to combat racial injustice and thus, preserve the country’s commitment to equality and democracy. This work, more than quantifying the level of racism present in the US police system, speaks to the power of data to both mask and unearth the issues that plague our society. Analyses like that which has been conducted here, show us the vital importance of ethical data collection, manipulation, and representation, which are key to raising awareness and catalyzing positive social and institutional changes.
 
 
 <h1> Code Appendix </h1>
