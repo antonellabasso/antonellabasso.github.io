@@ -85,7 +85,7 @@ To explore the racial discrepancies in number of individuals shot by police rela
 
 1. **Difference:** Difference between the number of Black and white shootings per million in the racial population for state \\(j\\). \\[d_j = x_{bj}-x_{wj}\\]
 
-2. **Ratio:** Ratio of weighted Black to white shootings, i.e., the weighted number of Black victims per white victim for state \\(j\\). \\[r_j = x_{bj}/x_{wj}\\]
+2. **Ratio:** Ratio of weighted Black to white shootings in state \\(j\\), i.e., the weighted number of Black victims per white victim. \\[r_j = x_{bj}/x_{wj}\\]
 
 These metrics provide a way to analyze racial disparities in police shootings by comparing observed rates relative to one another and to the degree of state-wide police violence documented. Specifically, while differences shed light on these discrepancies as it pertains to the sheer number of victims, ratios provide a more stark comparison of shooting rates, ignoring the magnitude of police brutality present in each state. For each of the two measures we construct a bar graph, violin plot and US map, as depicted below, to visualize and better gauge these racial disparities as they relate to geographical location and political climate at the state level.
 
