@@ -178,30 +178,180 @@ nrow(us_shootings) # total number of shootings (~27% Black, ~50% white)
 
 {% endhighlight %}
 
-<!--
-
 {% highlight R %}
 
 ## Weighting 
 
+# df of number of shootings in each state by race 
+grouped_bw_shootings <- bw_shootings %>%
+   group_by(state, race) %>%
+   count() %>%
+   left_join(demo, by=c("state", "race"))
+   
+# adding population and weighted observation metric columns
+BLM <- grouped_bw_shootings %>%
+    mutate(sub_pop_mill = sub_pop/1000000, weighted_prop_shot = n/sub_pop_mill)
+
 {% endhighlight %}
 
 {% highlight R %}
+
+# Figure 1
+
+# comparing raw and weighted number of shootings 
+rw_shootings <- BLM %>%
+   select(state, race, n, weighted_prop_shot) %>%
+   pivot_longer(!(state|race), names_to = "type_prop", values_to = "count")
+   
+# new facet label names for type_prop variable
+type_prop.labs <- c("Raw Number of Shootings", "Weighted Proportion Shot")
+names(type_prop.labs) <- c("n", "weighted_prop_shot")
+
+ggplot(data=rw_shootings, aes(x=state, y=count, fill=race)) +
+   geom_bar(stat="identity", position=position_dodge(), alpha=1) +
+   facet_wrap(~type_prop, scales="free_x", labeller=labeller(type_prop=type_prop.labs)) +
+   coord_flip() +
+   scale_fill_manual(values=c("darkorange", "deepskyblue1"), name="Race") + 
+   labs(x="State", title="US Police Shootings by State") +
+   theme(panel.grid.major.x=element_blank(),
+         panel.grid.minor.x=element_blank(),
+         axis.ticks.length=unit(-0.2, "cm"),
+         axis.title.y=element_blank(),
+         plot.title=element_text(face="bold", size=17))
+          
 {% endhighlight %}
 
 {% highlight R %}
+
+## Analysis (Racial Disparities)
+
+# including state political affiliations
+state <- unique(BLM$state)
+
+# red states
+R <- c("AK", "AL", "AR", "FL", "IA",
+       "ID", "IN", "KS", "KY", "LA",
+       "MO", "MS", "MT", "NC", "ND", 
+       "NE", "OH", "OK", "SC", "SD", 
+       "TN", "TX", "UT", "WV", "WY")
+       
+pol_party <- c()
+for (i in 1:length(states)){
+   if (states[i] %in% R){
+      pol_party[i] <- "R"
+      } else{
+           pol_party[i] <- "D"
+        }
+   }
+
+# 1. DIFFERENCE: xb-xw
+diff <- c()
+for (i in 1:(nrow(BLM)-1)){
+   if (BLM$state[i] == BLM$state[i+1]){
+      if (BLM$weighted_prop_shot[i] > BLM$weighted_prop_shot[i+1]){
+         diff <- c(diff, BLM$weighted_prop_shot[i]-BLM$weighted_prop_shot[i+1])
+         }
+      }
+   }
+BLM_diff <- data.frame(state, pol_party, diff)
+BLM_diff <- arrange(BLM_diff, desc(diff))
+
+# 2. RATIO: xb/xw
+ratio <- c()
+for (i in 1:(nrow(BLM)-1)){
+   if (BLM$state[i] == BLM$state[i+1]){
+      if (BLM$weighted_prop_shot[i] > BLM$weighted_prop_shot[i+1]){
+         ratio <- c(ratio, BLM$weighted_prop_shot[i]/BLM$weighted_prop_shot[i+1])
+         }
+      }
+   }
+BLM_ratio <- data.frame(state, pol_party, ratio)
+BLM_ratio <- arrange(BLM_ratio, desc(ratio))
+
 {% endhighlight %}
 
 {% highlight R %}
+
+## Visualizing Racial Disparities - DIFFERENCES
+
+# bar graph (Figure 2)
+ggplot(BLM_diff, aes(x=reorder(state, diff), y=diff, fill=pol_party)) +
+   geom_bar(stat="identity", alpha=0.7) +
+   scale_fill_manual(values=c("blue", "red2"), name="Political Party") +
+   labs(x="State", y="Black Shootings - White Shootings", 
+        title="Differences in US Police Shootings",
+        subtitle="By State and Political Party") + 
+   coord_flip() +
+   theme_minimal() +
+   theme(panel.grid.major.x=element_blank(),
+         axis.text=element_text(size=12),
+         axis.ticks.length=unit(-0.2, "cm"),
+         plot.title=element_text(face="bold", size=17))
+         
+# violin plot (Figure 3)
+ggplot(BLM_diff, aes(x=pol_party, y=diff, fill=pol_party)) + 
+   geom_violin(trim=FALSE, alpha=0.7) +
+   scale_fill_manual(values=c("blue", "red2"), name="Political Party") + 
+   labs(y="Difference",
+        title="Differences in US Police Shootings", 
+        subtitle="By Political Party") +
+   theme(panel.grid.major.x=element_blank(),
+         axis.text=element_text(size=12),
+         axis.ticks.length=unit(-0.2, "cm"),
+         axis.title.x=element_blank(),
+         plot.title=element_text(face="bold", size=17))
+         
+# US map (Figure 4)
+plot_usmap(data=BLM_diff, values="diff", color="red") +
+   scale_fill_continuous(low="white", high="red", name="Difference", label=scales::comma) + 
+   labs(title="Differences in US Police Shootings by State", 
+        subtitle="Proportion of Black Population Shot > Proportion of White Population Shot") +
+   theme(legend.position="right",
+         panel.grid.major.x=element_blank(),
+         axis.ticks.length=unit(-0.2, "cm"),
+         plot.title=element_text(face="bold", size=17))
+
 {% endhighlight %}
 
 {% highlight R %}
-{% endhighlight %}
 
-{% highlight R %}
-{% endhighlight %}
+## Visualizing Racial Disparities - RATIOS
 
-{% highlight R %}
+# bar graph (Figure 5)
+ggplot(BLM_ratio, aes(x=reorder(state, ratio), y=ratio, fill=pol_party)) +
+   geom_bar(stat="identity", alpha=0.7) +
+   scale_fill_manual(values=c("blue", "red2"), name="Political Party") +
+   labs(x="State", y="Black Shootings / White Shootings", 
+        title="Ratios of US Police Shootings", 
+        subtitle="By State and Political Party") + 
+   coord_flip() +
+   theme_minimal() +
+   theme(panel.grid.major.x=element_blank(),
+         axis.text=element_text(size=12),
+         axis.ticks.length=unit(-0.2, "cm"),
+         plot.title=element_text(face="bold", size=17))
+         
+# violin plot (Figure 6)
+ggplot(BLM_ratio, aes(x=pol_party, y=ratio, fill=pol_party)) + 
+   geom_violin(trim=FALSE, alpha=0.7) +
+   scale_fill_manual(values=c("blue", "red2"), name="Political Party") + 
+   labs(y="Ratio",
+        title="Ratios of US Police Shootings", 
+        subtitle="By Political Party") +
+   theme(panel.grid.major.x=element_blank(),
+         axis.text=element_text(size=12),
+         axis.ticks.length=unit(-0.2, "cm"),
+         axis.title.x=element_blank(),
+         plot.title=element_text(face="bold", size=17))
+         
+# US map (Figure 7)
+plot_usmap(data=BLM_ratio, values="ratio", color="red") +
+   scale_fill_continuous(low="white", high="red", name="Ratio", label=scales::comma) + 
+   labs(title="Ratios of US Police Shootings by State", 
+        subtitle="Proportion of Black Population Shot > Proportion of White Population Shot") +
+   theme(legend.position="right",
+         panel.grid.major.x=element_blank(),
+         axis.ticks.length=unit(-0.2, "cm"),
+         plot.title=element_text(face="bold", size=17))
+         
 {% endhighlight %}
-
--->
