@@ -120,4 +120,88 @@ Based on our analysis of police shooting data from the past five years, specific
 
 <h1> Code Appendix </h1>
 
+{% highlight R %}
 
+## Libraries
+library(tidyverse)
+library(usmap)
+
+{% endhighlight %}
+
+{% highlight R %}
+
+## Preprocessing Data
+
+# police shootings data
+shootings <- read.csv('~/shootings.csv') %>% 
+   select(-c(id, armed))
+  
+# state population/demographic data 
+demo_data <- read.delim('~/Bridged-Race Population Estimates 1990-2020.txt') %>% 
+   na.omit() %>% 
+   select(State, Race, Population)
+demo_data$Race <- sub("^$", "Total", demo_data$Race)
+demo_data_rm <- filter(Race != "Total")
+demo_data_tot <- demo_data %>% 
+   pivot_wider(names_from=Race, values_from=Population) %>%
+   select(c("State", "Total"))
+demo <- demo_data_rm %>% 
+   full_join(demo_data_tot, by="State") %>% 
+   rename(state=State, race=Race, sub_pop=Population, total_pop=Total)
+   
+# converting state names to abbreviations for merging with shootings data
+demo$state <- gsub("West VA", "West Virginia", demo$state)
+demo$state <- state.abb[match(demo$state, state.name)]
+for (i in 1:length(demo$state)){ # DC is converted to 'NA' by default 
+  if (is.na(demo$state[i])){
+    demo$state[i] <- "DC" 
+  }
+}
+
+# renaming race values 
+demo$race <- gsub("Black or African American", "Black", demo$race)
+
+# merging data
+us_shootings <- shootings %>% 
+   full_join(demo, by=c("state", "race"))
+bw_shootings %>% us_shootings %>%
+   filter(race == "Black" | race == "White") # populations of interest
+
+{% endhighlight %}
+
+{% highlight R %}
+
+# how many Black vs. white shootings?
+table(bw_shootings$race)
+nrow(bw_shootings) # total number of Black and White shootings (~35% Black, ~65% white)
+nrow(us_shootings) # total number of shootings (~27% Black, ~50% white)
+
+{% endhighlight %}
+
+<!--
+
+{% highlight R %}
+
+## Weighting 
+
+{% endhighlight %}
+
+{% highlight R %}
+{% endhighlight %}
+
+{% highlight R %}
+{% endhighlight %}
+
+{% highlight R %}
+{% endhighlight %}
+
+{% highlight R %}
+{% endhighlight %}
+
+{% highlight R %}
+{% endhighlight %}
+
+{% highlight R %}
+{% endhighlight %}
+
+-->
