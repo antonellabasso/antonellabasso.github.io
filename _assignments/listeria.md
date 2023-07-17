@@ -1,6 +1,6 @@
 ---
 code: PHP2550
-title: High-Risk Serovar Prevalence in Sources of Listeria Monocytogenes: A Clustering Analysis of Food-Borne Illness
+title: "High-Risk Serovar Prevalence in Sources of Listeria Monocytogenes: A Clustering Analysis of Food-Borne Illness"
 mathjax: true
 layout: page
 categories: media
