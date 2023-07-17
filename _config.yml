@@ -23,7 +23,7 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   # - {file: "README.md"} 
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
-  - {title: Mail, icon: envelope, url: "mailto:antonella_basso@brown.edu"}
+  - {title: Mail, icon: envelope, url: "mailto:antonella_basso@alumni.brown.edu"}
   - {title: LinkedIn, icon: linkedin, url: "https://www.linkedin.com/in/antonella-basso-347026180/"}
   - {title: Twitter, icon: twitter, url: "https://twitter.com/abasso98"}
   - {title: Github, icon: github, url: "https://github.com/antonellabasso"}
