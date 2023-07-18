@@ -24,7 +24,7 @@ permalink: /collections/:title
 **Conclusion:** It is likely that severe strains of listeria manifest more frequently in specific isolation sources, but our analysis is too limited to provide any further guidance on this matter. Future studies should aim to atomize isolation sources into more precise groups in order to better understand the relationship between strain severity and source. However, our methodology has laid the groundwork for more intensive research.
 
 
-[**Full Paper**](https://antonellabasso.github.io/HW pdfs/PHP2550_Basso_FinalProject_Report.pdf) <br>
+[**Read Report**](https://antonellabasso.github.io/HW pdfs/PHP2550_Basso_FinalProject_Report.pdf) <br>
 [**Github Repo**](https://github.com/NTProvost/PHP-2550-Project)
 
 ![Poster Presentation](https://antonellabasso.github.io/IMAGES/PHP2550_FinalProject_Poster.png) 
