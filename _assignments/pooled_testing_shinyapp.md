@@ -1,6 +1,6 @@
 ---
 code: PHP2560
-title: Pooled Testing Simulation
+title: A Shiny App for Optimal Pooled Testing Strategies 
 mathjax: true
 layout: page
 categories: media
