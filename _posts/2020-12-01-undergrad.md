@@ -13,4 +13,4 @@ In recent decades, the growing use of predictive, data-driven algorithms has pos
 
 > "...when we use algorithms not just to make predictions but to make decisions, they are changing the world in which they operate, and we need to take into account such dynamic effects in order to talk sensibly about something like 'fairness'..." &mdash; *"The Ethical Algorithm"*
 
-#### [Full Paper](https://antonellabasso.github.io/Basso.2020.AF.Research.Short.pdf)
+#### [Read Report](https://antonellabasso.github.io/Basso.2020.AF.Research.Short.pdf)
