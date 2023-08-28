@@ -29,11 +29,11 @@ I've recently graduated with a Sc.M. in Biostatistics from [Brown University](ht
 
 **Interests:** biostatistics, data science, statistical & machine learning, predictive modeling, causal inference, algorithmic fairness, public health, social justice, R/Python
 
-My CV can be accessed [here](https://antonellabasso.github.io/Basso.2023.CV.pdf). 
+[Resume](https://antonellabasso.github.io/Basso.2023.Resume.pdf). 
 
 <span class="br"></span> 
 
-**NOTE:** This site is currently under construction.
+<!-- **NOTE:** This site is currently under construction. -->
 
 <span class="br"></span> 
 
