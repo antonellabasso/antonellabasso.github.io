@@ -11,7 +11,7 @@ title: "About Me"
 
 <!-- <br style="line-height: 0.5px"/> -->
 
-I've recently graduated with a Sc.M. in Biostatistics from [Brown University](https://www.brown.edu/academics/public-health/biostats/people/students/current-masters-students), where I've gained ample experience in areas of statistics, data science and ML with a focus on public health applications. With previous backgrounds in mathematics and philosophy, I am particularly drawn to causal inference and the intersection of fairness and automated decision making, which have been the driving force behind my master's thesis. Specifically, I’ve dedicated my research to developing a causally-motivated approach to training fair predictive models, under the mentorship of [Dr. Alice Paul](https://vivo.brown.edu/display/apaul6), that appeals to path-specific effects and penalized maximum likelihood estimation. Under a counterfactual discrimination reasoning framework, the goal behind this work was to adapt the methods proposed by [Nabi et al. (2022)](https://proceedings.mlr.press/v177/nabi22a/nabi22a.pdf) to simultaneously simplify the constrained optimization task and foster a more flexible, transparent decision making environment, allowing users to gauge the contextual trade-offs in accuracy and fairness so as to establish more sound and explainable solutions. Having successfully completed my academic journey, I am now excited to embark on this new chapter in my career, where I can leverage my quantitative skills and unique perspectives to make meaningful contributions in industry as a dedicated professional.
+I've recently graduated with a ScM in Biostatistics from [Brown University](https://www.brown.edu/academics/public-health/biostats/people/students/current-masters-students), where I've gained ample experience in areas of statistics, data science and ML with a focus on public health applications. With previous backgrounds in mathematics and philosophy, I am particularly drawn to causal inference and the intersection of fairness and automated decision making, which have been the driving force behind my master's thesis. Specifically, I’ve dedicated my research to developing a causally-motivated approach to training fair predictive models, under the mentorship of [Dr. Alice Paul](https://vivo.brown.edu/display/apaul6), that appeals to path-specific effects and penalized maximum likelihood estimation. Under a counterfactual discrimination reasoning framework, the goal behind this work was to adapt the methods proposed by [Nabi et al. (2022)](https://proceedings.mlr.press/v177/nabi22a/nabi22a.pdf) to simultaneously simplify the constrained optimization task and foster a more flexible, transparent decision making environment, allowing users to gauge the contextual trade-offs in accuracy and fairness so as to establish more sound and explainable solutions. Having successfully completed my academic journey, I am now excited to embark on this new chapter in my career, where I can leverage my quantitative skills and unique perspectives to make meaningful contributions in industry as a dedicated professional.
 
 <!--  I've recently graduated with a Sc.M. in Biostatistics from [Brown University](https://www.brown.edu/academics/public-health/biostats/people/students/current-masters-students), where I've gained ample experience in areas of statistics, data science and ML with a focus on public health applications. With previous backgrounds in mathematics and philosophy, I am particularly drawn to causal inference and the intersection of fairness and automated decision making, which have been the driving force behind my master's thesis. Specifically, I’ve dedicated my research to developing a causally-motivated approach to fair predictive modeling, under the mentorship of [Dr. Alice Paul](https://vivo.brown.edu/display/apaul6), that appeals to path-specific effects and penalized maximum likelihood estimation within a counterfactual reasoning framework&mdash;the goal behind this work being to foster a more transparent and flexible decision making environment, allowing users to gauge the contextual trade-offs in accuracy and fairness to establish more sound and explainable solutions. Having successfully completed my academic journey, I am now excited to embark on this new chapter in my career, where I can leverage my quantitative skills and unique perspectives to make meaningful contributions in industry as a dedicated professional. -->
 
@@ -27,13 +27,15 @@ I've recently graduated with a Sc.M. in Biostatistics from [Brown University](ht
 
 <span class="br"></span> 
 
-**Interests:** biostatistics, data science, statistical & machine learning, predictive modeling, causal inference, algorithmic fairness, public health, social justice, R/Python
+**Interests:** biostatistics, data science, statistical & machine learning, causal inference, algorithmic fairness, public health, social justice
 
-My CV can be accessed [here](https://antonellabasso.github.io/Basso.2023.CV.pdf). 
+<!-- [View my Resume](https://antonellabasso.github.io/Basso.2023.Resume.pdf) -->
+
+[View my Resume](https://resume.io/r/rDyRb5mqd)
 
 <span class="br"></span> 
 
-**NOTE:** This site is currently under construction.
+<!-- **NOTE:** This site is currently under construction. -->
 
 <span class="br"></span> 
 
