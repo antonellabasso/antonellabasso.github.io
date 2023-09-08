@@ -27,11 +27,11 @@ I've recently graduated with a ScM in Biostatistics from [Brown University](http
 
 <span class="br"></span> 
 
-**Interests:** biostatistics, data science, statistical & machine learning, causal inference, algorithmic fairness, public health, social justice
+**Interests:** biostatistics, data science, machine learning, causal inference, algorithmic fairness, public health, social justice
 
-<!-- [View my Resume](https://antonellabasso.github.io/Basso.2023.Resume.pdf) -->
+[View my Resume](https://antonellabasso.github.io/Basso.2023.Resume.pdf)
 
-[View my Resume](https://resume.io/r/rDyRb5mqd)
+<!-- [View my Resume](https://resume.io/r/rDyRb5mqd) -->
 
 <span class="br"></span> 
 
